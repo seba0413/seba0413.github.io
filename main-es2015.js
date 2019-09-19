@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--The content below is only a placeholder and can be replaced.-->\r\n<!--app-menu></app-menu-->\r\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n<div style=\"text-align:center\">\r\n  <h1>\r\n    {{nuevoJuego.nombre}}!\r\n  </h1>\r\n </div>\r\n<h2></h2>\r\n<form name=\"juego\">\r\n\r\n   <label>ingrese numero:  </label>  <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\"/>\r\n    <h1>{{nuevoJuego.numeroIngresado}}  </h1>\r\n \r\n    <h2 [hidden]=\"ocultarVerificar\"><button  *ngIf=\"nuevoJuego.numeroSecreto!=0\" (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar</button></h2>\r\n \r\n    <h2><button *ngIf=\"nuevoJuego.numeroSecreto==0 \" (click)=\"generarnumero()\"  class=\"btn btn-info btn-lg\">Nuevo número secreto</button></h2>\r\n \r\n    <h2><p *ngIf=\"nuevoJuego.numeroSecreto!=0\" ><i class=\"fa fa-spinner fa-spin\"></i>Esperando que ingrese un número</p></h2>\r\n\r\n    <h3 [hidden]=\"!nuevoJuego.gano\">usted adivino el número</h3>\r\n    <h3 [hidden]=\"nuevoJuego.gano\">usted aún no gano </h3>\r\n\r\n\r\n</form>\r\n<div id=\"snackbar\">{{Mensajes}}</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--The content below is only a placeholder and can be replaced.-->\n<!--app-menu></app-menu-->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n<div style=\"text-align:center\">\n  <h1>\n    {{nuevoJuego.nombre}}!\n  </h1>\n </div>\n<h2></h2>\n<form name=\"juego\">\n\n   <label>ingrese numero:  </label>  <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\"/>\n    <h1>{{nuevoJuego.numeroIngresado}}  </h1>\n \n    <h2 [hidden]=\"ocultarVerificar\"><button  *ngIf=\"nuevoJuego.numeroSecreto!=0\" (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar</button></h2>\n \n    <h2><button *ngIf=\"nuevoJuego.numeroSecreto==0 \" (click)=\"generarnumero()\"  class=\"btn btn-info btn-lg\">Nuevo número secreto</button></h2>\n \n    <h2><p *ngIf=\"nuevoJuego.numeroSecreto!=0\" ><i class=\"fa fa-spinner fa-spin\"></i>Esperando que ingrese un número</p></h2>\n\n    <h3 [hidden]=\"!nuevoJuego.gano\">usted adivino el número</h3>\n    <h3 [hidden]=\"nuevoJuego.gano\">usted aún no gano </h3>\n\n\n</form>\n<div id=\"snackbar\">{{Mensajes}}</div>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<app-adivina-el-numero (enviarJuego)=\"tomarJuegoTerminado($event)\">   </app-adivina-el-numero> \r\n<h1> listado </h1>\r\n<app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<app-adivina-el-numero (enviarJuego)=\"tomarJuegoTerminado($event)\">   </app-adivina-el-numero> \n<h1> listado </h1>\n<app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados>\n\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form name=\"juego\">\r\n    <ul>\r\n       <li>\r\n       Primer número: <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\" readonly/>\r\n      \r\n      </li>\r\n      <li>\r\n       Operador: <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\" readonly/>\r\n        \r\n      </li>\r\n      <li>\r\n       Segundo número: <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\" readonly/>\r\n        \r\n      </li>\r\n      <li>\r\n        Respuesta: <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\"/>\r\n         \r\n       </li>\r\n      <li>\r\n        <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar {{Tiempo}} </button></h2>\r\n      </li>\r\n      <li>\r\n        <h2 [hidden]=\"!ocultarVerificar\"><button  (click)=\"NuevoJuego()\"  class=\"btn btn-info btn-lg\">Nuevo</button></h2>\r\n      </li>\r\n      <li>\r\n        <h2><p><i class=\"fa fa-spinner fa-spin\"></i>Esperando numero...</p></h2>\r\n    \r\n        <h3 [hidden]=\"!nuevoJuego.gano\">usted adivino el número</h3>\r\n        <h3 [hidden]=\"nuevoJuego.gano\">usted aún no gano </h3>\r\n      </li>\r\n    </ul>\r\n    \r\n    </form>");
+/* harmony default export */ __webpack_exports__["default"] = ("<form name=\"juego\">\n    <ul>\n        <div style=\"text-align:center\">\n            <h1> {{nuevoJuego.nombre}}! </h1>\n        </div>\n      <div>\n\n        <h2 [hidden]=\"!jugando\" ><span>{{nuevoJuego.primerNumero}} {{nuevoJuego.operador}} {{nuevoJuego.segundoNumero}} = </span></h2>\n\n      </div>\n\n      <div>\n      \n        <h2 [hidden]=\"!jugando\"> Respuesta: <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\"/></h2>\n         \n      </div>\n\n      <div>\n\n        <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar {{Tiempo}} </button></h2> <br>\n\n      </div>\n\n      <div>\n\n        <div [hidden]=\"!ocultarVerificar\" style=\"text-align:center\"><button  (click)=\"NuevoJuego()\"  class=\"btn btn-info btn-lg\">Nuevo Juego </button></div>\n\n      </div>\n      \n      <div>\n        <!-- <h2><p><i class=\"fa fa-spinner fa-spin\"></i>Esperando numero...</p></h2>\n    \n        <h3 [hidden]=\"!nuevoJuego.gano\">usted adivino el número</h3>\n        <h3 [hidden]=\"nuevoJuego.gano\">usted aún no gano </h3> -->\n        </div>\n    </ul>\n    \n    </form>");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<app-agilidad-aritmetica (enviarJuego)=\"tomarJuegoTerminado($event)\">   </app-agilidad-aritmetica> \r\n<h1> Listado de Resultados </h1>\r\n<app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados>");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<app-agilidad-aritmetica (enviarJuego)=\"tomarJuegoTerminado($event)\">   </app-agilidad-aritmetica> \n<h1> Listado de Resultados </h1>\n<app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados>");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>anagrama works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>anagrama works!</p>\n");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<div class=\"panel panel-default\">\r\n    <div class=\"hero-text\">\r\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\r\n        <p>Sebastian Pasquini</p>\r\n        <a href=\"https://github.com/seba0413\"target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></a>\r\n        <a  routerLink=\"/QuienSoy\" >Quien Soy? <i class=\"fa fa-user\"></i></a>\r\n    </div>\r\n\r\n    <nav class=\"navbar navbar-inverse\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"navbar-header\">\r\n                <a class=\"navbar-brand\" href=\"#\">Home</a>\r\n            </div>\r\n            <ul class=\"nav navbar-nav\">\r\n                <li class=\"active\"><a routerLink=\"/Registro\">Registrarse</a></li>\r\n                <li><a  routerLink=\"/Login\"> Ingresar</a></li>\r\n            </ul>\r\n        </div>\r\n    </nav>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"panel panel-default\">\n    <div class=\"hero-text\">\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\n        <p>Sebastian Pasquini</p>\n        <a href=\"https://github.com/seba0413\"target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></a>\n        <a  routerLink=\"/QuienSoy\" >Quien Soy? <i class=\"fa fa-user\"></i></a>\n    </div>\n\n    <nav class=\"navbar navbar-inverse\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <a class=\"navbar-brand\" href=\"#\">Home</a>\n            </div>\n            <ul class=\"nav navbar-nav\">\n                <li class=\"active\"><a routerLink=\"/Registro\">Registrarse</a></li>\n                <li><a  routerLink=\"/Login\"> Ingresar</a></li>\n            </ul>\n        </div>\n    </nav>\n</div>");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panel panel-default\">\r\n    <div class=\"hero-text\">\r\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\r\n        <p>Sebastian Pasquini</p>\r\n        <a href=\"https://github.com/seba0413\"target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></a>\r\n        <a  routerLink=\"/QuienSoy\"target=\"_blank\">Quien Soy? <i class=\"fa fa-github\"></i></a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n            <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span>Registrase</a></li>\r\n            <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Ingresar</a></li>\r\n          </ul>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panel panel-default\">\n    <div class=\"hero-text\">\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\n        <p>Sebastian Pasquini</p>\n        <a href=\"https://github.com/seba0413\"target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></a>\n        <a  routerLink=\"/QuienSoy\"target=\"_blank\">Quien Soy? <i class=\"fa fa-github\"></i></a>\n    </div>\n    <ul class=\"nav navbar-nav navbar-right\">\n            <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span>Registrase</a></li>\n            <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Ingresar</a></li>\n          </ul>\n</div>");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>input-jugadores works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>input-jugadores works!</p>\n");
 
 /***/ }),
 
@@ -149,7 +149,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-menu></app-menu> \r\n<div style=\"text-align:center\">\r\n  <h1>\r\n   Sala de Juegos\r\n  </h1>\r\n </div>\r\n <router-outlet></router-outlet>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"text-align:center\">\n  <h1>\n   Sala de Juegos\n  </h1>\n</div>\n <app-menu></app-menu> \n\n \n <router-outlet></router-outlet>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/jugadores-listado/jugadores-listado.component.html":
+/*!**********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/jugadores-listado/jugadores-listado.component.html ***!
+  \**********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ul class=\"nav nav-pills nav-justified\">\n    <li class=\"active\"><a routerLink=\"/Principal\">Ir a inicio</a></li>\n    <li><a (click)=\"TraerTodos()\">Todos los jugadores</a></li>\n    <li><a (click)=\"TraerGanadores()\">Los ganadores</a></li>\n    <li><a (click)=\"TraerPerdedores()\">Los perdedores</a></li>\n  </ul>\n\n  <table class=\"table table-condensed\">\n    <thead>\n      <tr>\n        <th>usuario</th>\n        <th>cuit</th>\n        <th>sexo</th>\n        <th>gano</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let jugador of listado\" >\n        <td>{{jugador.usuario}} </td>\n        <td>{{jugador.cuit}} </td> \n        <!-- <td>{{jugador.sexo | sexo| uppercase}} </td>  -->\n        <td>{{jugador.gano}} </td> \n        \n      </tr>\n     \n    </tbody>\n  </table>");
 
 /***/ }),
 
@@ -162,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"table table-condensed\">\r\n    <thead>\r\n      <tr>\r\n        <th>Juego</th>\r\n        <th>Jugador</th>\r\n        <th>Resultado</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let juego of listado\">\r\n        <td>{{juego.nombre}} </td>\r\n        <td>{{juego.jugador}} </td> \r\n        <td *ngIf=\"juego.gano\">Gano </td>   \r\n        <td *ngIf=\"!juego.gano\">Perdio</td>     \r\n      </tr>     \r\n    </tbody>\r\n</table>");
+/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"table table-condensed\">\n    <thead>\n      <tr>\n        <th>Juego</th>\n        <th>Jugador</th>\n        <th>Resultado</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let juego of listado\">\n        <td>{{juego.nombre}} </td>\n        <td>{{juego.jugador}} </td> \n        <td *ngIf=\"juego.gano\">Gano </td>   \n        <td *ngIf=\"!juego.gano\">Perdio</td>     \n      </tr>     \n    </tbody>\n</table>");
 
 /***/ }),
 
@@ -175,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- <div>\r\n    <button routerLink=\"/Principal\">Principal</button>\r\n    <button (click)=\"Juego('Adivina')\">Adivina</button>\r\n    <button (click)=\"Juego('Agilidad')\">Agilidad</button>\r\n    <button (click)=\"Juego('AdivinaMasListado')\">Adivina+listado</button>\r\n    <button (click)=\"Juego('AgilidadaMasListado')\">Agilidad+listado</button>  \r\n    <button routerLink=\"/error\">Error</button>\r\n  \r\n</div> -->\r\n\r\n<nav class=\"navbar navbar-inverse\">\r\n    <div class=\"container-fluid\"> \r\n      <div class=\"navbar-header\">\r\n        <a class=\"navbar-brand\" routerLink=\"/Principal\">Inicio</a>\r\n      </div>\r\n      <ul class=\"nav navbar-nav\">\r\n        <li class=\"active\"><a routerLink=\"/Juegos\">Juegos</a></li>\r\n        <li><a data-toggle=\"tooltip\" title=\"Hooray!\" (click)=\"Juego('Adivina')\">Adivina</a></li>\r\n        <li><a  (click)=\"Juego('Agilidad')\">Agilidad</a></li>\r\n        <li><a  (click)=\"Juego('AdivinaMasListado')\">Adivina+listado</a></li>\r\n        <li><a  (click)=\"Juego('AgilidadaMasListado')\">Agilidad+listado</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n          <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Mis Datos</a></li>\r\n          <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-out\"></span> Salir</a></li>\r\n        </ul>\r\n    </div>\r\n  </nav>\r\n    ");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <div>\n    <button routerLink=\"/Principal\">Principal</button>\n    <button (click)=\"Juego('Adivina')\">Adivina</button>\n    <button (click)=\"Juego('Agilidad')\">Agilidad</button>\n    <button (click)=\"Juego('AdivinaMasListado')\">Adivina+listado</button>\n    <button (click)=\"Juego('AgilidadaMasListado')\">Agilidad+listado</button>  \n    <button routerLink=\"/error\">Error</button>\n  \n</div> -->\n\n<div class=\"container\">\n  <ul class=\"nav justify-content-center\">\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/Principal\">Inicio</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"#\">Mis datos</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"#\">Salir</a>\n    </li>\n  </ul>\n</div>\n  <div>\n    <ul class=\"breadcrumb justify-content-center\">\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos\">Juegos</a></li>\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Adivina\">Adivina</a></li>\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Agilidad\">Agilidad</a></li>\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AdivinaMasListado\">Adivina+listado</a></li>\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AgilidadMasListado\">Agilidad+listado</a></li>\n    </ul>\n  </div>\n    ");
 
 /***/ }),
 
@@ -441,6 +454,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./componentes/agilidad-aritmetica/agilidad-aritmetica.component */ "./src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.ts");
 /* harmony import */ var _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./componentes/agilidad-mas-listado/agilidad-mas-listado.component */ "./src/app/componentes/agilidad-mas-listado/agilidad-mas-listado.component.ts");
 /* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
+/* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
 
 
 
@@ -451,12 +465,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import { JugadoresListadoComponent } from './componentes/jugadores-listado/jugadores-listado.component';
+
 const routes = [
     { path: '', component: _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_3__["PrincipalComponent"] },
     { path: 'Principal', component: _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_3__["PrincipalComponent"] },
     { path: 'error', component: _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_9__["ErrorComponent"] },
-    //{ path: 'Jugadores' , component: JugadoresListadoComponent },
+    { path: 'Jugadores', component: _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_10__["JugadoresListadoComponent"] },
     { path: 'Juegos', component: _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_4__["JuegosComponent"], children: [
             { path: 'Adivina', component: _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_5__["AdivinaElNumeroComponent"] },
             { path: 'AdivinaMasListado', component: _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_6__["AdivinaMasListadoComponent"] },
@@ -550,6 +564,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./componentes/anagrama/anagrama.component */ "./src/app/componentes/anagrama/anagrama.component.ts");
 /* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
 /* harmony import */ var _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./componentes/input-jugadores/input-jugadores.component */ "./src/app/componentes/input-jugadores/input-jugadores.component.ts");
+/* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
 
 
 
@@ -568,7 +583,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import { JugadoresListadoComponent } from './componentes/jugadores-listado/jugadores-listado.component';
+
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -586,8 +601,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_14__["AgilidadMasListadoComponent"],
             _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_15__["AnagramaComponent"],
             _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_16__["ErrorComponent"],
-            _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__["InputJugadoresComponent"]
-            //JugadoresListadoComponent
+            _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__["InputJugadoresComponent"],
+            _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__["JugadoresListadoComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -661,8 +676,69 @@ class JuegoAdivina extends _juego__WEBPACK_IMPORTED_MODULE_1__["Juego"] {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JuegoAgilidad", function() { return JuegoAgilidad; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _juego__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./juego */ "./src/app/clases/juego.ts");
 
-class JuegoAgilidad {
+
+class JuegoAgilidad extends _juego__WEBPACK_IMPORTED_MODULE_1__["Juego"] {
+    constructor(nombre, gano, jugador) {
+        super("Agilidad aritmetica", gano, jugador);
+        this.primerNumero = 0;
+        this.segundoNumero = 0;
+        this.operador = "";
+        this.resultado = 0;
+        this.numeroIngresado = 0;
+    }
+    calcularResultado() {
+        switch (this.operador) {
+            case "+":
+                this.resultado = this.primerNumero + this.segundoNumero;
+                break;
+            case "-":
+                this.resultado = this.primerNumero - this.segundoNumero;
+                break;
+            case "*":
+                this.resultado = this.primerNumero * this.segundoNumero;
+                break;
+        }
+        console.log(this.primerNumero + " " + this.operador + " " + this.segundoNumero + " = " + this.resultado);
+    }
+    asignarNumeros() {
+        this.primerNumero = Math.floor((Math.random() * 100) + 1);
+        this.segundoNumero = Math.floor((Math.random() * 10) + 1);
+    }
+    asignarOperador() {
+        var numero = Math.floor((Math.random() * 100));
+        if (numero > 66)
+            this.operador = "*";
+        else if (numero > 33)
+            this.operador = "-";
+        else
+            this.operador = "+";
+    }
+    verificar() {
+        if (this.numeroIngresado == this.resultado) {
+            this.gano = true;
+        }
+        if (this.gano) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    generarCalculo() {
+        this.asignarNumeros();
+        this.asignarOperador();
+        this.calcularResultado();
+    }
+    resetearJuego() {
+        this.operador = "";
+        this.primerNumero = 0;
+        this.segundoNumero = 0;
+        this.resultado = 0;
+        this.numeroIngresado = 0;
+        this.gano = false;
+    }
 }
 
 
@@ -894,15 +970,18 @@ __webpack_require__.r(__webpack_exports__);
 let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
     constructor() {
         this.enviarJuego = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.jugando = false;
         this.ocultarVerificar = true;
         this.Tiempo = 5;
         this.nuevoJuego = new _clases_juego_agilidad__WEBPACK_IMPORTED_MODULE_2__["JuegoAgilidad"]();
-        console.info("Inicio agilidad");
     }
     ngOnInit() {
     }
     NuevoJuego() {
+        this.nuevoJuego.resetearJuego();
+        this.jugando = true;
         this.ocultarVerificar = false;
+        this.nuevoJuego.generarCalculo();
         this.repetidor = setInterval(() => {
             this.Tiempo--;
             console.log("llego", this.Tiempo);
@@ -915,8 +994,13 @@ let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
         }, 900);
     }
     verificar() {
+        if (this.nuevoJuego.verificar())
+            alert("Bien! No sos tan burr@!");
+        else
+            alert("jajaja batiste cualquiera!");
         this.ocultarVerificar = false;
         clearInterval(this.repetidor);
+        this.jugando = false;
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1202,6 +1286,74 @@ JuegosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/componentes/jugadores-listado/jugadores-listado.component.css":
+/*!*******************************************************************************!*\
+  !*** ./src/app/componentes/jugadores-listado/jugadores-listado.component.css ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL2p1Z2Fkb3Jlcy1saXN0YWRvL2p1Z2Fkb3Jlcy1saXN0YWRvLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/componentes/jugadores-listado/jugadores-listado.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: JugadoresListadoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JugadoresListadoComponent", function() { return JugadoresListadoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+// import { JugadoresService } from '../../servicios/jugadores.service';
+let JugadoresListadoComponent = class JugadoresListadoComponent {
+    //miJugadoresServicio:JugadoresService
+    //constructor(serviceJugadores:JugadoresService) {
+    constructor() {
+        //this.miJugadoresServicio = serviceJugadores;      
+    }
+    ngOnInit() {
+    }
+    TraerTodos() {
+        //alert("totos");
+        //this.miJugadoresServicio.traertodos('jugadores/','todos').then(data=>{
+        //console.info("jugadores listado",(data));
+        //this.listado= data;
+        //})
+    }
+    TraerGanadores() {
+        //this.miJugadoresServicio.traertodos('jugadores/','ganadores').then(data=>{
+        //console.info("jugadores listado",(data));
+        // this.listado= data;
+        //})
+    }
+    TraerPerdedores() {
+        //this.miJugadoresServicio.traertodos('jugadores/','perdedores').then(data=>{
+        //console.info("jugadores listado",(data));
+        //this.listado= data;
+        //})
+    }
+};
+JugadoresListadoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-jugadores-listado',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./jugadores-listado.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/jugadores-listado/jugadores-listado.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./jugadores-listado.component.css */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.css")).default]
+    })
+], JugadoresListadoComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/componentes/listado-de-resultados/listado-de-resultados.component.css":
 /*!***************************************************************************************!*\
   !*** ./src/app/componentes/listado-de-resultados/listado-de-resultados.component.css ***!
@@ -1436,7 +1588,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\tpSalaDeJuegos\TP-SalaDeJuegos\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\labo4\TP-Juegos\salaDeJuegos\src\main.ts */"./src/main.ts");
 
 
 /***/ })
