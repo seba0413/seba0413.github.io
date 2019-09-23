@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"panel panel-default\">\n    <div class=\"hero-text\">\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\n        <p>Sebastian Pasquini</p>\n        <a href=\"https://github.com/seba0413\"target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></a>\n        <a  routerLink=\"/QuienSoy\" >Quien Soy? <i class=\"fa fa-user\"></i></a>\n    </div>\n\n    <nav class=\"navbar navbar-inverse\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <a class=\"navbar-brand\" href=\"#\">Home</a>\n            </div>\n            <ul class=\"nav navbar-nav\">\n                <li class=\"active\"><a routerLink=\"/Registro\">Registrarse</a></li>\n                <li><a  routerLink=\"/Login\"> Ingresar</a></li>\n            </ul>\n        </div>\n    </nav>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n        <a class=\"navbar-brand\" href=\"#\">Home</a>\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n          <span class=\"navbar-toggler-icon\"></span>\n        </button>\n      \n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n          <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#\">Ingresar <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Registrarse <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://github.com/seba0413\">GitHub <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLink=\"/QuienSoy\">Quien Soy</a>\n            </li>\n          </ul>\n          <span class=\"form-inline my-2 my-lg-0\">\n              Sebastian Pasquini\n          </span>\n        </div>\n      </nav>\n\n<div class=\"panel panel-default\">\n    <div class=\"hero-text\">\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -149,7 +149,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"text-align:center\">\n  <h1>\n   Sala de Juegos\n  </h1>\n</div>\n <app-menu></app-menu> \n\n \n <router-outlet></router-outlet>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera></app-cabecera>\r\n<app-menu></app-menu> \r\n<router-outlet></router-outlet>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/juegoscard/juegoscard.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/juegoscard/juegoscard.component.html ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"card\" style=\"width: 18rem;\">\n    <img src=\"./assets/imagenes/1.jpg\" class=\"card-img-top\" alt=\"...\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">JUEGOS</h5>\n        <p class=\"card-text\">¡Elegí el juego que más te guste y poné a prueba tu inteligencia!</p>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -188,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- <div>\n    <button routerLink=\"/Principal\">Principal</button>\n    <button (click)=\"Juego('Adivina')\">Adivina</button>\n    <button (click)=\"Juego('Agilidad')\">Agilidad</button>\n    <button (click)=\"Juego('AdivinaMasListado')\">Adivina+listado</button>\n    <button (click)=\"Juego('AgilidadaMasListado')\">Agilidad+listado</button>  \n    <button routerLink=\"/error\">Error</button>\n  \n</div> -->\n\n<div class=\"container\">\n  <ul class=\"nav justify-content-center\">\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/Principal\">Inicio</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"#\">Mis datos</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"#\">Salir</a>\n    </li>\n  </ul>\n</div>\n  <div>\n    <ul class=\"breadcrumb justify-content-center\">\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos\">Juegos</a></li>\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Adivina\">Adivina</a></li>\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Agilidad\">Agilidad</a></li>\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AdivinaMasListado\">Adivina+listado</a></li>\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AgilidadMasListado\">Agilidad+listado</a></li>\n    </ul>\n  </div>\n    ");
+/* harmony default export */ __webpack_exports__["default"] = ("  <div>\r\n    <ul class=\"breadcrumb justify-content-center\">\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Card\">Juegos</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Adivina\">Adivina</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Agilidad\">Agilidad</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AdivinaMasListado\">Adivina+listado</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AgilidadMasListado\">Agilidad+listado</a></li>\r\n    </ul>\r\n  </div>\r\n    ");
 
 /***/ }),
 
@@ -201,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera>  </app-cabecera>\r\n<div class=\"container\" >\r\n    <ul class=\"list-group\">\r\n        <li class=\"list-group-item list-group-item-danger\">           \r\n          <div class=\"media-body\">\r\n              <div class=\"hero-text\">\r\n                  <h4 >Menú Principal</h4>\r\n              </div>\r\n            </div> \r\n          </li>\r\n        <li class=\"list-group-item list-group-item-success\">\r\n          <a routerLink=\"/Juegos\">\r\n            <div class=\"media\">\r\n              <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/saladejuegos.png\" class=\"media-object imagenDeMenu\" >\r\n              </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Juegos</h4>\r\n                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-info\">\r\n            <a routerLink=\"/Listado\">\r\n              <div class=\"media\">\r\n                  <div class=\"media-left\">\r\n                      <img src=\"./assets/imagenes/listado.jpg\" class=\"media-object imagenDeMenu\" >\r\n                    </div>\r\n                <div class=\"media-body\">\r\n                  <h4 class=\"media-heading\">Listados de resultados</h4>\r\n                  <p>Los listados de los resultados con ordenamiento y busqueda</p>\r\n                </div>                \r\n              </div> \r\n            </a>\r\n          </li>\r\n        <li class=\"list-group-item list-group-item-warning\">\r\n          <a routerLink=\"/Juegos\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/Configuracion.png\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Configuraci&oacute;n</h4>\r\n                <p>Ajustes de la aplicacion y los métodos de autentificación</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-warning\">\r\n          <a routerLink=\"/Jugadores\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/jugadores.png\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Jugadores</h4>\r\n                <p>Listado de jugadores</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>   \r\n      </ul>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera>  </app-cabecera>\r\n<div class=\"container\" >\r\n    <ul class=\"list-group\">\r\n        <li class=\"list-group-item cab\">           \r\n          <div class=\"media-body\">\r\n              <div class=\"hero-text\">\r\n                  <h4 >Menú Principal</h4>\r\n              </div>\r\n            </div> \r\n          </li> \r\n        <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos\">\r\n            <div class=\"media\">\r\n              <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/1.jpg\" class=\"media-object imagenDeMenu\" >\r\n              </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Juegos</h4>\r\n                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n            <a routerLink=\"/Listado\">\r\n              <div class=\"media\">\r\n                  <div class=\"media-left\">\r\n                      <img src=\"./assets/imagenes/2.jpg\" class=\"media-object imagenDeMenu\" >\r\n                    </div>\r\n                <div class=\"media-body\">\r\n                  <h4 class=\"media-heading\">Listados de resultados</h4>\r\n                  <p>Los listados de los resultados con ordenamiento y busqueda</p>\r\n                </div>                \r\n              </div> \r\n            </a>\r\n          </li>\r\n          <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/3.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Configuraci&oacute;n</h4>\r\n                <p>Ajustes de la aplicacion y los métodos de autentificación</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n          <a routerLink=\"/Jugadores\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/4.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Jugadores</h4>\r\n                <p>Listado de jugadores</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>   \r\n      </ul>\r\n</div>");
 
 /***/ }),
 
@@ -455,6 +468,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./componentes/agilidad-mas-listado/agilidad-mas-listado.component */ "./src/app/componentes/agilidad-mas-listado/agilidad-mas-listado.component.ts");
 /* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
 /* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
+/* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
+
 
 
 
@@ -475,7 +490,8 @@ const routes = [
             { path: 'Adivina', component: _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_5__["AdivinaElNumeroComponent"] },
             { path: 'AdivinaMasListado', component: _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_6__["AdivinaMasListadoComponent"] },
             { path: 'Agilidad', component: _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_7__["AgilidadAritmeticaComponent"] },
-            { path: 'AgilidadaMasListado', component: _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_8__["AgilidadMasListadoComponent"] }
+            { path: 'AgilidadaMasListado', component: _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_8__["AgilidadMasListadoComponent"] },
+            { path: 'Card', component: _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_11__["JuegoscardComponent"] }
         ]
     }
 ];
@@ -565,6 +581,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
 /* harmony import */ var _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./componentes/input-jugadores/input-jugadores.component */ "./src/app/componentes/input-jugadores/input-jugadores.component.ts");
 /* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
+/* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
+
 
 
 
@@ -602,7 +620,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_15__["AnagramaComponent"],
             _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_16__["ErrorComponent"],
             _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__["InputJugadoresComponent"],
-            _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__["JugadoresListadoComponent"]
+            _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__["JugadoresListadoComponent"],
+            _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__["JuegoscardComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1119,7 +1138,7 @@ AnagramaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".panel\r\n{\r\n    height: 200px;\r\n    background-image: url(\"/salaDeJuegos/src/assets/imagenes/cabecera.png\");\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    position: relative;\r\n}\r\n\r\n\r\n.hero-text {\r\ntext-align: center;\r\nposition: absolute;\r\ntop: 50%;\r\nleft: 50%;\r\ntransform: translate(-50%, -50%);\r\ncolor: #3E06B0;\r\n}\r\n\r\n\r\n.hero-text a {\r\nborder: none;\r\noutline: 0;\r\ndisplay: inline-block;\r\npadding: 10px 25px;\r\ncolor: black;\r\nbackground-color: #ddd;\r\ntext-align: center;\r\ncursor: pointer;\r\n}\r\n\r\n\r\n.hero-text a:hover {\r\nbackground-color: #555;\r\ncolor: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvY2FiZWNlcmEvY2FiZWNlcmEuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7SUFFSSxhQUFhO0lBQ2IsdUVBQXVFO0lBQ3ZFLDJCQUEyQjtJQUMzQiw0QkFBNEI7SUFDNUIsc0JBQXNCO0lBQ3RCLGtCQUFrQjtBQUN0Qjs7O0FBR0E7QUFDQSxrQkFBa0I7QUFDbEIsa0JBQWtCO0FBQ2xCLFFBQVE7QUFDUixTQUFTO0FBQ1QsZ0NBQWdDO0FBQ2hDLGNBQWM7QUFDZDs7O0FBRUE7QUFDQSxZQUFZO0FBQ1osVUFBVTtBQUNWLHFCQUFxQjtBQUNyQixrQkFBa0I7QUFDbEIsWUFBWTtBQUNaLHNCQUFzQjtBQUN0QixrQkFBa0I7QUFDbEIsZUFBZTtBQUNmOzs7QUFFQTtBQUNBLHNCQUFzQjtBQUN0QixZQUFZO0FBQ1oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9jYWJlY2VyYS9jYWJlY2VyYS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBhbmVsXHJcbntcclxuICAgIGhlaWdodDogMjAwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIvc2FsYURlSnVlZ29zL3NyYy9hc3NldHMvaW1hZ2VuZXMvY2FiZWNlcmEucG5nXCIpO1xyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcblxyXG4uaGVyby10ZXh0IHtcclxudGV4dC1hbGlnbjogY2VudGVyO1xyXG5wb3NpdGlvbjogYWJzb2x1dGU7XHJcbnRvcDogNTAlO1xyXG5sZWZ0OiA1MCU7XHJcbnRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xyXG5jb2xvcjogIzNFMDZCMDtcclxufVxyXG5cclxuLmhlcm8tdGV4dCBhIHtcclxuYm9yZGVyOiBub25lO1xyXG5vdXRsaW5lOiAwO1xyXG5kaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbnBhZGRpbmc6IDEwcHggMjVweDtcclxuY29sb3I6IGJsYWNrO1xyXG5iYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO1xyXG50ZXh0LWFsaWduOiBjZW50ZXI7XHJcbmN1cnNvcjogcG9pbnRlcjtcclxufVxyXG5cclxuLmhlcm8tdGV4dCBhOmhvdmVyIHtcclxuYmFja2dyb3VuZC1jb2xvcjogIzU1NTtcclxuY29sb3I6IHdoaXRlO1xyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".panel\r\n{\r\n    height: 80px;\r\n    background-image: url(\"/salaDeJuegos/src/assets/imagenes/cabecera.png\");\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    position: relative;\r\n}\r\n\r\nh1 {\r\n    color: black;\r\n}\r\n\r\n.hero-text {\r\ntext-align: center;\r\nposition: absolute;\r\ntop: 50%;\r\nleft: 50%;\r\ntransform: translate(-50%, -50%);\r\ncolor: #3E06B0;\r\n}\r\n\r\n.hero-text a {\r\nborder: none;\r\noutline: 0;\r\ndisplay: inline-block;\r\npadding: 10px 25px;\r\ncolor: black;\r\nbackground-color: #ddd;\r\ntext-align: center;\r\ncursor: pointer;\r\n}\r\n\r\n.hero-text a:hover {\r\nbackground-color: #555;\r\ncolor: white;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvY2FiZWNlcmEvY2FiZWNlcmEuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7SUFFSSxZQUFZO0lBQ1osdUVBQXVFO0lBQ3ZFLDJCQUEyQjtJQUMzQiw0QkFBNEI7SUFDNUIsc0JBQXNCO0lBQ3RCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBRUE7QUFDQSxrQkFBa0I7QUFDbEIsa0JBQWtCO0FBQ2xCLFFBQVE7QUFDUixTQUFTO0FBQ1QsZ0NBQWdDO0FBQ2hDLGNBQWM7QUFDZDs7QUFFQTtBQUNBLFlBQVk7QUFDWixVQUFVO0FBQ1YscUJBQXFCO0FBQ3JCLGtCQUFrQjtBQUNsQixZQUFZO0FBQ1osc0JBQXNCO0FBQ3RCLGtCQUFrQjtBQUNsQixlQUFlO0FBQ2Y7O0FBRUE7QUFDQSxzQkFBc0I7QUFDdEIsWUFBWTtBQUNaIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvY2FiZWNlcmEvY2FiZWNlcmEuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wYW5lbFxyXG57XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIvc2FsYURlSnVlZ29zL3NyYy9hc3NldHMvaW1hZ2VuZXMvY2FiZWNlcmEucG5nXCIpO1xyXG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbn1cclxuXHJcbmgxIHtcclxuICAgIGNvbG9yOiBibGFjaztcclxufVxyXG5cclxuLmhlcm8tdGV4dCB7XHJcbnRleHQtYWxpZ246IGNlbnRlcjtcclxucG9zaXRpb246IGFic29sdXRlO1xyXG50b3A6IDUwJTtcclxubGVmdDogNTAlO1xyXG50cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxuY29sb3I6ICMzRTA2QjA7XHJcbn1cclxuXHJcbi5oZXJvLXRleHQgYSB7XHJcbmJvcmRlcjogbm9uZTtcclxub3V0bGluZTogMDtcclxuZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG5wYWRkaW5nOiAxMHB4IDI1cHg7XHJcbmNvbG9yOiBibGFjaztcclxuYmFja2dyb3VuZC1jb2xvcjogI2RkZDtcclxudGV4dC1hbGlnbjogY2VudGVyO1xyXG5jdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuXHJcbi5oZXJvLXRleHQgYTpob3ZlciB7XHJcbmJhY2tncm91bmQtY29sb3I6ICM1NTU7XHJcbmNvbG9yOiB3aGl0ZTtcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -1281,6 +1300,50 @@ JuegosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./juegos.component.css */ "./src/app/componentes/juegos/juegos.component.css")).default]
     })
 ], JuegosComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/juegoscard/juegoscard.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/componentes/juegoscard/juegoscard.component.css ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".card {\r\n    margin: 0 auto; \r\n    float: none; \r\n    margin-top: 80px; \r\n    margin-bottom: 10px; \r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvanVlZ29zY2FyZC9qdWVnb3NjYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxjQUFjO0lBQ2QsV0FBVztJQUNYLGdCQUFnQjtJQUNoQixtQkFBbUI7QUFDdkIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9qdWVnb3NjYXJkL2p1ZWdvc2NhcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJkIHtcclxuICAgIG1hcmdpbjogMCBhdXRvOyBcclxuICAgIGZsb2F0OiBub25lOyBcclxuICAgIG1hcmdpbi10b3A6IDgwcHg7IFxyXG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDsgXHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/juegoscard/juegoscard.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/componentes/juegoscard/juegoscard.component.ts ***!
+  \****************************************************************/
+/*! exports provided: JuegoscardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JuegoscardComponent", function() { return JuegoscardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let JuegoscardComponent = class JuegoscardComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+JuegoscardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-juegoscard',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./juegoscard.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/juegoscard/juegoscard.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./juegoscard.component.css */ "./src/app/componentes/juegoscard/juegoscard.component.css")).default]
+    })
+], JuegoscardComponent);
 
 
 
@@ -1483,7 +1546,7 @@ MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".imagenDeMenu{\r\n    width: 80px;\r\n    height: 70px;\r\n    }\r\n    \r\n.hero-text {\r\n    text-align: center;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    color: #100000;\r\n    }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHJpbmNpcGFsL3ByaW5jaXBhbC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWjs7QUFFSjtJQUNJLGtCQUFrQjtJQUNsQixrQkFBa0I7SUFDbEIsUUFBUTtJQUNSLFNBQVM7SUFDVCxnQ0FBZ0M7SUFDaEMsY0FBYztJQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcHJpbmNpcGFsL3ByaW5jaXBhbC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltYWdlbkRlTWVudXtcclxuICAgIHdpZHRoOiA4MHB4O1xyXG4gICAgaGVpZ2h0OiA3MHB4O1xyXG4gICAgfVxyXG4gICAgXHJcbi5oZXJvLXRleHQge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiA1MCU7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcclxuICAgIGNvbG9yOiAjMTAwMDAwO1xyXG4gICAgfSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".imagenDeMenu{\r\n    width: 150px;\r\n    height: 150px;\r\n    float: left;\r\n    margin-right: 2em;\r\n    vertical-align: middle;\r\n}\r\n    \r\n.hero-text {\r\n    text-align: center;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    color: whitesmoke;\r\n}\r\n    \r\n.cab {\r\n    height: 50px;\r\n    background-color: darkslategrey;\r\n}\r\n    \r\na {\r\n    text-decoration: none;\r\n    color: darkblue;\r\n}\r\n    \r\np {\r\n    color: #100000;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHJpbmNpcGFsL3ByaW5jaXBhbC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7SUFDYixXQUFXO0lBQ1gsaUJBQWlCO0lBQ2pCLHNCQUFzQjtBQUMxQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixrQkFBa0I7SUFDbEIsUUFBUTtJQUNSLFNBQVM7SUFDVCxnQ0FBZ0M7SUFDaEMsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLCtCQUErQjtBQUNuQzs7QUFFQTtJQUNJLHFCQUFxQjtJQUNyQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksY0FBYztBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3ByaW5jaXBhbC9wcmluY2lwYWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZW5EZU1lbnV7XHJcbiAgICB3aWR0aDogMTUwcHg7XHJcbiAgICBoZWlnaHQ6IDE1MHB4O1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDJlbTtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuICAgIFxyXG4uaGVyby10ZXh0IHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogNTAlO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XHJcbiAgICBjb2xvcjogd2hpdGVzbW9rZTtcclxufVxyXG5cclxuLmNhYiB7XHJcbiAgICBoZWlnaHQ6IDUwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBkYXJrc2xhdGVncmV5O1xyXG59XHJcblxyXG5hIHtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgIGNvbG9yOiBkYXJrYmx1ZTtcclxufVxyXG5cclxucCB7XHJcbiAgICBjb2xvcjogIzEwMDAwMDtcclxufSJdfQ== */");
 
 /***/ }),
 
