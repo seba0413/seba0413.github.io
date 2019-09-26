@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--The content below is only a placeholder and can be replaced.-->\n<!--app-menu></app-menu-->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n<div style=\"text-align:center\">\n  <h1>\n    {{nuevoJuego.nombre}}!\n  </h1>\n </div>\n<h2></h2>\n<form name=\"juego\">\n\n   <label>ingrese numero:  </label>  <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\"/>\n    <h1>{{nuevoJuego.numeroIngresado}}  </h1>\n \n    <h2 [hidden]=\"ocultarVerificar\"><button  *ngIf=\"nuevoJuego.numeroSecreto!=0\" (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar</button></h2>\n \n    <h2><button *ngIf=\"nuevoJuego.numeroSecreto==0 \" (click)=\"generarnumero()\"  class=\"btn btn-info btn-lg\">Nuevo número secreto</button></h2>\n \n    <h2><p *ngIf=\"nuevoJuego.numeroSecreto!=0\" ><i class=\"fa fa-spinner fa-spin\"></i>Esperando que ingrese un número</p></h2>\n\n    <h3 [hidden]=\"!nuevoJuego.gano\">usted adivino el número</h3>\n    <h3 [hidden]=\"nuevoJuego.gano\">usted aún no gano </h3>\n\n\n</form>\n<div id=\"snackbar\">{{Mensajes}}</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--The content below is only a placeholder and can be replaced.-->\n<!--app-menu></app-menu-->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n<div style=\"text-align:center\">\n  <h1>\n    ¡{{nuevoJuego.nombre}}!\n  </h1>\n </div>\n\n   <label class=\"ingrese\" [hidden]=\"ocultarIngrese\"><strong>Ingrese un numero:  </strong></label>  <input id=\"ingrese\" [hidden]=\"ocultarIngrese\" [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\"/>\n    <!-- <h1>{{nuevoJuego.numeroIngresado}}  </h1> -->\n \n    <h2 [hidden]=\"ocultarVerificar\"><button  *ngIf=\"nuevoJuego.numeroSecreto!=0\" (click)=\"verificar()\">Verificar</button></h2>\n \n    <h2><button *ngIf=\"nuevoJuego.numeroSecreto==0 \" (click)=\"generarnumero()\">Jugar al Número Secreto</button></h2>\n \n    <h3 style=\"text-align: center\"><p [hidden]=\"ocultarEsperando\" ><i class=\"fa fa-spinner fa-spin\"></i>Esperando que ingrese un número</p></h3>\n\n    <h3 [hidden]=\"!nuevoJuego.gano\" style=\"text-align: center\">¡Usted adivino el número!</h3>\n    <!-- <h3 [hidden]=\"nuevoJuego.gano\">usted aún no gano </h3> -->\n\n<div id=\"snackbar\">{{Mensajes}}</div>");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form name=\"juego\">\n    <ul>\n        <div style=\"text-align:center\">\n            <h1> {{nuevoJuego.nombre}}! </h1>\n        </div>\n      <div>\n\n        <h2 [hidden]=\"!jugando\" ><span>{{nuevoJuego.primerNumero}} {{nuevoJuego.operador}} {{nuevoJuego.segundoNumero}} = </span></h2>\n\n      </div>\n\n      <div>\n      \n        <h2 [hidden]=\"!jugando\"> Respuesta: <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:50%\"/></h2>\n         \n      </div>\n\n      <div>\n\n        <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar {{Tiempo}} </button></h2> <br>\n\n      </div>\n\n      <div>\n\n        <div [hidden]=\"!ocultarVerificar\" style=\"text-align:center\"><button  (click)=\"NuevoJuego()\"  class=\"btn btn-info btn-lg\">Nuevo Juego </button></div>\n\n      </div>\n      \n      <div>\n        <!-- <h2><p><i class=\"fa fa-spinner fa-spin\"></i>Esperando numero...</p></h2>\n    \n        <h3 [hidden]=\"!nuevoJuego.gano\">usted adivino el número</h3>\n        <h3 [hidden]=\"nuevoJuego.gano\">usted aún no gano </h3> -->\n        </div>\n    </ul>\n    \n    </form>");
+/* harmony default export */ __webpack_exports__["default"] = ("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n\n  <div style=\"text-align:center\">\n      <h1> ¡{{nuevoJuego.nombre}}! </h1>\n  </div>\n\n  <div *ngIf=\"!jugando\">\n    <h2 style=\"text-align:center\"><button  (click)=\"NuevoJuego()\">Jugar a Agilidad Aritmética </button></h2>\n  </div>\n\n  <div *ngIf=\"jugando\">\n    <h2 [hidden]=\"!jugando\" class=\"cuenta\"><span>Calcular:  {{nuevoJuego.primerNumero}} {{nuevoJuego.operador}} {{nuevoJuego.segundoNumero}} = </span></h2>      \n     \n    <label class=\"ingrese \"[hidden]=\"!jugando\"> Respuesta:  <input id=\"numIngresado\" [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\"/> </label>\n\n    <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar {{Tiempo}} </button></h2>     \n\n    <h5 style=\"text-align: center\"><p [hidden]=\"ocultarEsperando\" ><i class=\"fa fa-spinner fa-spin\"></i>Esperando que ingrese un número</p></h5>\n\n    <h3 [hidden]=\"!nuevoJuego.gano\" style=\"text-align: center\">¡Usted adivino el número!</h3>\n  </div>\n\n<div id=\"snackbar\">{{mensaje}}</div>");
 
 /***/ }),
 
@@ -201,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("  <div>\r\n    <ul class=\"breadcrumb justify-content-center\">\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Card\">Juegos</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Adivina\">Adivina</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Agilidad\">Agilidad</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AdivinaMasListado\">Adivina+listado</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AgilidadMasListado\">Agilidad+listado</a></li>\r\n    </ul>\r\n  </div>\r\n    ");
+/* harmony default export */ __webpack_exports__["default"] = ("  <div>\r\n    <ul class=\"breadcrumb justify-content-center\">\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Card\">Juegos</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Adivina\">Adivina</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Agilidad\">Agilidad</a></li>\r\n      <!-- <!-- <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AdivinaMasListado\">Adivina+listado</a></li> -->\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Tateti\">Tateti</a></li> \r\n    </ul>\r\n  </div>\r\n    ");
 
 /***/ }),
 
@@ -214,7 +214,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera>  </app-cabecera>\r\n<div class=\"container\" >\r\n    <ul class=\"list-group\">\r\n        <li class=\"list-group-item cab\">           \r\n          <div class=\"media-body\">\r\n              <div class=\"hero-text\">\r\n                  <h4 >Menú Principal</h4>\r\n              </div>\r\n            </div> \r\n          </li> \r\n        <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos\">\r\n            <div class=\"media\">\r\n              <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/1.jpg\" class=\"media-object imagenDeMenu\" >\r\n              </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Juegos</h4>\r\n                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n            <a routerLink=\"/Listado\">\r\n              <div class=\"media\">\r\n                  <div class=\"media-left\">\r\n                      <img src=\"./assets/imagenes/2.jpg\" class=\"media-object imagenDeMenu\" >\r\n                    </div>\r\n                <div class=\"media-body\">\r\n                  <h4 class=\"media-heading\">Listados de resultados</h4>\r\n                  <p>Los listados de los resultados con ordenamiento y busqueda</p>\r\n                </div>                \r\n              </div> \r\n            </a>\r\n          </li>\r\n          <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/3.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Configuraci&oacute;n</h4>\r\n                <p>Ajustes de la aplicacion y los métodos de autentificación</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n          <a routerLink=\"/Jugadores\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/4.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Jugadores</h4>\r\n                <p>Listado de jugadores</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>   \r\n      </ul>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera>  </app-cabecera>\r\n<div class=\"container\" >\r\n    <ul class=\"list-group\">\r\n        <li class=\"list-group-item cab\">           \r\n          <div class=\"media-body\">\r\n              <div class=\"hero-text\">\r\n                  <h4 >Menú Principal</h4>\r\n              </div>\r\n            </div> \r\n          </li> \r\n        <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos/Card\">\r\n            <div class=\"media\">\r\n              <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/1.jpg\" class=\"media-object imagenDeMenu\" >\r\n              </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Juegos</h4>\r\n                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n            <a routerLink=\"/Listado\">\r\n              <div class=\"media\">\r\n                  <div class=\"media-left\">\r\n                      <img src=\"./assets/imagenes/2.jpg\" class=\"media-object imagenDeMenu\" >\r\n                    </div>\r\n                <div class=\"media-body\">\r\n                  <h4 class=\"media-heading\">Listados de resultados</h4>\r\n                  <p>Los listados de los resultados con ordenamiento y busqueda</p>\r\n                </div>                \r\n              </div> \r\n            </a>\r\n          </li>\r\n          <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/3.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Configuraci&oacute;n</h4>\r\n                <p>Ajustes de la aplicacion y los métodos de autentificación</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n          <a routerLink=\"/Jugadores\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/4.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Jugadores</h4>\r\n                <p>Listado de jugadores</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>   \r\n      </ul>\r\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/tateti/tateti.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/tateti/tateti.component.html ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"text-align:center\">\n    <h1> ¡{{nuevoJuego.nombre}}! </h1>\n</div>\n<div *ngIf=\"!jugando\">\n  <h2 style=\"text-align:center\"><button  (click)=\"NuevoJuego()\">Jugar al Ta-Te-Ti </button></h2>\n</div>\n<div *ngIf=\"jugando\" class=\"col-6 generalShadow\" \n  style=\"background-color: lightgreen; border-radius: 15px; margin-top:50px; margin-left: 25%;\">\n  <div style=\"width:100%\" class=\"pull-center\">\n    <div class=\"row\">\n      <div class=\"col-4 celda1 tatetiValue celda\" (click)=\"juegaJugador(0)\">{{celdas[0].jugador}}</div>\n      <div class=\"col-4 celda2 tatetiValue celda\" (click)=\"juegaJugador(1)\">{{celdas[1].jugador}}</div>\n      <div class=\"col-4 celda3 tatetiValue celda\" (click)=\"juegaJugador(2)\">{{celdas[2].jugador}}</div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-4 celda4 tatetiValue celda\" (click)=\"juegaJugador(3)\">{{celdas[3].jugador}}</div>\n      <div class=\"col-4 celda5 tatetiValue celda\" (click)=\"juegaJugador(4)\">{{celdas[4].jugador}}</div>\n      <div class=\"col-4 celda6 tatetiValue celda\" (click)=\"juegaJugador(5)\">{{celdas[5].jugador}}</div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-4 celda7 tatetiValue celda\" (click)=\"juegaJugador(6)\">{{celdas[6].jugador}}</div>\n      <div class=\"col-4 celda8 tatetiValue celda\" (click)=\"juegaJugador(7)\">{{celdas[7].jugador}}</div>\n      <div class=\"col-4 celda9 tatetiValue celda\" (click)=\"juegaJugador(8)\">{{celdas[8].jugador}}</div>\n    </div>\n  </div>\n</div>\n\n<div id=\"snackbar\">{{mensaje}}</div>\n");
 
 /***/ }),
 
@@ -469,6 +482,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
 /* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
 /* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
+/* harmony import */ var _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./componentes/tateti/tateti.component */ "./src/app/componentes/tateti/tateti.component.ts");
+
 
 
 
@@ -491,6 +506,7 @@ const routes = [
             { path: 'AdivinaMasListado', component: _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_6__["AdivinaMasListadoComponent"] },
             { path: 'Agilidad', component: _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_7__["AgilidadAritmeticaComponent"] },
             { path: 'AgilidadaMasListado', component: _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_8__["AgilidadMasListadoComponent"] },
+            { path: 'Tateti', component: _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_12__["TatetiComponent"] },
             { path: 'Card', component: _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_11__["JuegoscardComponent"] }
         ]
     }
@@ -582,6 +598,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./componentes/input-jugadores/input-jugadores.component */ "./src/app/componentes/input-jugadores/input-jugadores.component.ts");
 /* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
 /* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./componentes/tateti/tateti.component */ "./src/app/componentes/tateti/tateti.component.ts");
+
+
 
 
 
@@ -621,12 +641,14 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_16__["ErrorComponent"],
             _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__["InputJugadoresComponent"],
             _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__["JugadoresListadoComponent"],
-            _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__["JuegoscardComponent"]
+            _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__["JuegoscardComponent"],
+            _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_21__["TatetiComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__["BrowserAnimationsModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -763,6 +785,32 @@ class JuegoAgilidad extends _juego__WEBPACK_IMPORTED_MODULE_1__["Juego"] {
 
 /***/ }),
 
+/***/ "./src/app/clases/juego-tateti.ts":
+/*!****************************************!*\
+  !*** ./src/app/clases/juego-tateti.ts ***!
+  \****************************************/
+/*! exports provided: JuegoTaTeTi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JuegoTaTeTi", function() { return JuegoTaTeTi; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _juego__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./juego */ "./src/app/clases/juego.ts");
+
+
+class JuegoTaTeTi extends _juego__WEBPACK_IMPORTED_MODULE_1__["Juego"] {
+    constructor(nombre, gano, jugador) {
+        super("Ta-Te-Ti", gano, jugador);
+    }
+    verificar() {
+        return true;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/clases/juego.ts":
 /*!*********************************!*\
   !*** ./src/app/clases/juego.ts ***!
@@ -805,7 +853,7 @@ class Juego {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\nform {\r\n    border: 10px solid #f1f1f1;\r\n    padding: 10px;\r\n    background:gray;\r\n}\r\n\r\ninput[type=text], input[type=password] {\r\n    width: 100%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbutton {\r\n    /*background-color: #4CAF50;*/\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n}\r\n\r\nbutton:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.cancelbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #f44336;\r\n}\r\n\r\n.aceptbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #3664F4;\r\n}\r\n\r\n.imgcontainer {\r\n    text-align: center;\r\n    margin: 24px 0 12px 0;\r\n}\r\n\r\nimg.avatar {\r\n    width: 40%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\nspan.psw {\r\n    float: right;\r\n    padding-top: 16px;\r\n}\r\n\r\n/* Change styles for span and cancel button on extra small screens */\r\n\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n   \r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n\r\n#snackbar.Perdedor {\r\n    background-color: #FF0000;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvYWRpdmluYS1lbC1udW1lcm8vYWRpdmluYS1lbC1udW1lcm8uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSwwQkFBMEI7SUFDMUIsYUFBYTtJQUNiLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixxQkFBcUI7SUFDckIsc0JBQXNCO0lBQ3RCLHNCQUFzQjtBQUMxQjs7QUFFQTtJQUNJLDZCQUE2QjtJQUM3QixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixZQUFZO0lBQ1osZUFBZTtJQUNmLFdBQVc7QUFDZjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIseUJBQXlCO0FBQzdCOztBQUNBO0lBQ0ksa0JBQWtCO0lBQ2xCLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLFVBQVU7SUFDVixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLGlCQUFpQjtBQUNyQjs7QUFFQSxvRUFBb0U7O0FBQ3BFO0lBQ0k7T0FDRyxjQUFjO09BQ2QsV0FBVztJQUNkO0lBQ0E7T0FDRyxXQUFXO0lBQ2Q7QUFDSjs7QUFJQTtJQUNJLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsbUJBQW1COztJQUVuQixXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLGtCQUFrQjtJQUNsQixhQUFhO0lBQ2IsZUFBZTtJQUNmLFVBQVU7SUFDVixTQUFTO0lBQ1QsWUFBWTtJQUNaLGVBQWU7QUFDbkI7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSxtQkFBbUI7SUFDbkIsaURBQWlEO0lBQ2pELHlDQUF5QztBQUM3Qzs7QUFFQTtJQUNJLE1BQU0sU0FBUyxFQUFFLFVBQVUsQ0FBQztJQUM1QixJQUFJLFlBQVksRUFBRSxVQUFVLENBQUM7QUFDakM7O0FBRUE7SUFDSSxNQUFNLFNBQVMsRUFBRSxVQUFVLENBQUM7SUFDNUIsSUFBSSxZQUFZLEVBQUUsVUFBVSxDQUFDO0FBQ2pDOztBQUVBO0lBQ0ksTUFBTSxZQUFZLEVBQUUsVUFBVSxDQUFDO0lBQy9CLElBQUksU0FBUyxFQUFFLFVBQVUsQ0FBQztBQUM5Qjs7QUFFQTtJQUNJLE1BQU0sWUFBWSxFQUFFLFVBQVUsQ0FBQztJQUMvQixJQUFJLFNBQVMsRUFBRSxVQUFVLENBQUM7QUFDOUIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9hZGl2aW5hLWVsLW51bWVyby9hZGl2aW5hLWVsLW51bWVyby5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbmZvcm0ge1xyXG4gICAgYm9yZGVyOiAxMHB4IHNvbGlkICNmMWYxZjE7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgYmFja2dyb3VuZDpncmF5O1xyXG59XHJcblxyXG5pbnB1dFt0eXBlPXRleHRdLCBpbnB1dFt0eXBlPXBhc3N3b3JkXSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIHBhZGRpbmc6IDEycHggMjBweDtcclxuICAgIG1hcmdpbjogOHB4IDA7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIC8qYmFja2dyb3VuZC1jb2xvcjogIzRDQUY1MDsqL1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgcGFkZGluZzogMTRweCAyMHB4O1xyXG4gICAgbWFyZ2luOiA4cHggMDtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG5idXR0b246aG92ZXIge1xyXG4gICAgb3BhY2l0eTogMC44O1xyXG59XHJcblxyXG4uY2FuY2VsYnRuIHtcclxuICAgIHdpZHRoOiBhdXRvO1xyXG4gICAgcGFkZGluZzogMTBweCAxOHB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2Y0NDMzNjtcclxufVxyXG4uYWNlcHRidG4ge1xyXG4gICAgd2lkdGg6IGF1dG87XHJcbiAgICBwYWRkaW5nOiAxMHB4IDE4cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzY2NEY0O1xyXG59XHJcbi5pbWdjb250YWluZXIge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgbWFyZ2luOiAyNHB4IDAgMTJweCAwO1xyXG59XHJcblxyXG5pbWcuYXZhdGFyIHtcclxuICAgIHdpZHRoOiA0MCU7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbn1cclxuXHJcbi5jb250YWluZXIge1xyXG4gICAgcGFkZGluZzogMTZweDtcclxufVxyXG5cclxuc3Bhbi5wc3cge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG4gICAgcGFkZGluZy10b3A6IDE2cHg7XHJcbn1cclxuXHJcbi8qIENoYW5nZSBzdHlsZXMgZm9yIHNwYW4gYW5kIGNhbmNlbCBidXR0b24gb24gZXh0cmEgc21hbGwgc2NyZWVucyAqL1xyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xyXG4gICAgc3Bhbi5wc3cge1xyXG4gICAgICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICAgICBmbG9hdDogbm9uZTtcclxuICAgIH1cclxuICAgIC5jYW5jZWxidG4ge1xyXG4gICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICB9XHJcbn1cclxuXHJcblxyXG5cclxuI3NuYWNrYmFyIHtcclxuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIG1pbi13aWR0aDogMjUwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogLTEyNXB4O1xyXG4gICBcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMnB4O1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHotaW5kZXg6IDE7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICBib3R0b206IDMwcHg7XHJcbiAgICBmb250LXNpemU6IDE3cHg7XHJcbn1cclxuI3NuYWNrYmFyLkdhbmFkb3Ige1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzA1OUYyRjtcclxufVxyXG4jc25hY2tiYXIuUGVyZGVkb3Ige1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI0ZGMDAwMDtcclxufVxyXG4jc25hY2tiYXIuc2hvdyB7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IGZhZGVpbiAwLjVzLCBmYWRlb3V0IDAuNXMgMi41cztcclxuICAgIGFuaW1hdGlvbjogZmFkZWluIDAuNXMsIGZhZGVvdXQgMC41cyAyLjVzO1xyXG59XHJcblxyXG5ALXdlYmtpdC1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9IFxyXG4gICAgdG8ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9XHJcbiAgICB0byB7Ym90dG9tOiAzMHB4OyBvcGFjaXR5OiAxO31cclxufVxyXG5cclxuQC13ZWJraXQta2V5ZnJhbWVzIGZhZGVvdXQge1xyXG4gICAgZnJvbSB7Ym90dG9tOiAzMHB4OyBvcGFjaXR5OiAxO30gXHJcbiAgICB0byB7Ym90dG9tOiAwOyBvcGFjaXR5OiAwO31cclxufVxyXG5cclxuQGtleWZyYW1lcyBmYWRlb3V0IHtcclxuICAgIGZyb20ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9XHJcbiAgICB0byB7Ym90dG9tOiAwOyBvcGFjaXR5OiAwO31cclxufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\nform {\r\n    border: 5px solid #00008b;\r\n    padding: 80px;\r\n    background:gray;\r\n\r\n}\r\n\r\ninput[type=text], input[type=password] {\r\n    width: 15%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n    margin-left: 2%;\r\n    margin-top: 10vh;\r\n}\r\n\r\nbutton {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    margin-top:10vh;\r\n}\r\n\r\nbutton:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.cancelbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #f44336;\r\n}\r\n\r\n.aceptbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #3664F4;\r\n}\r\n\r\n.imgcontainer {\r\n    text-align: center;\r\n    margin: 24px 0 12px 0;\r\n}\r\n\r\nimg.avatar {\r\n    width: 40%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\nspan.psw {\r\n    float: right;\r\n    padding-top: 16px;\r\n}\r\n\r\n/* Change styles for span and cancel button on extra small screens */\r\n\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n   \r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n\r\n#snackbar.Perdedor {\r\n    background-color: #2271b3;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n.ingrese {\r\n    font-size: 30px;\r\n    margin-left: 30%;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvYWRpdmluYS1lbC1udW1lcm8vYWRpdmluYS1lbC1udW1lcm8uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSx5QkFBeUI7SUFDekIsYUFBYTtJQUNiLGVBQWU7O0FBRW5COztBQUVBO0lBQ0ksVUFBVTtJQUNWLGtCQUFrQjtJQUNsQixhQUFhO0lBQ2IscUJBQXFCO0lBQ3JCLHNCQUFzQjtJQUN0QixzQkFBc0I7SUFDdEIsZUFBZTtJQUNmLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixZQUFZO0lBQ1osZUFBZTtJQUNmLFdBQVc7SUFDWCxlQUFlO0FBQ25COztBQUVBO0lBQ0ksWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIseUJBQXlCO0FBQzdCOztBQUNBO0lBQ0ksV0FBVztJQUNYLGtCQUFrQjtJQUNsQix5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSxrQkFBa0I7SUFDbEIscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osaUJBQWlCO0FBQ3JCOztBQUVBLG9FQUFvRTs7QUFDcEU7SUFDSTtPQUNHLGNBQWM7T0FDZCxXQUFXO0lBQ2Q7SUFDQTtPQUNHLFdBQVc7SUFDZDtBQUNKOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixtQkFBbUI7O0lBRW5CLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixlQUFlO0lBQ2YsVUFBVTtJQUNWLFNBQVM7SUFDVCxZQUFZO0lBQ1osZUFBZTtBQUNuQjs7QUFDQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLG1CQUFtQjtJQUNuQixpREFBaUQ7SUFDakQseUNBQXlDO0FBQzdDOztBQUVBO0lBQ0ksZUFBZTtJQUNmLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLE1BQU0sU0FBUyxFQUFFLFVBQVUsQ0FBQztJQUM1QixJQUFJLFlBQVksRUFBRSxVQUFVLENBQUM7QUFDakM7O0FBRUE7SUFDSSxNQUFNLFNBQVMsRUFBRSxVQUFVLENBQUM7SUFDNUIsSUFBSSxZQUFZLEVBQUUsVUFBVSxDQUFDO0FBQ2pDOztBQUVBO0lBQ0ksTUFBTSxZQUFZLEVBQUUsVUFBVSxDQUFDO0lBQy9CLElBQUksU0FBUyxFQUFFLFVBQVUsQ0FBQztBQUM5Qjs7QUFFQTtJQUNJLE1BQU0sWUFBWSxFQUFFLFVBQVUsQ0FBQztJQUMvQixJQUFJLFNBQVMsRUFBRSxVQUFVLENBQUM7QUFDOUIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9hZGl2aW5hLWVsLW51bWVyby9hZGl2aW5hLWVsLW51bWVyby5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbmZvcm0ge1xyXG4gICAgYm9yZGVyOiA1cHggc29saWQgIzAwMDA4YjtcclxuICAgIHBhZGRpbmc6IDgwcHg7XHJcbiAgICBiYWNrZ3JvdW5kOmdyYXk7XHJcblxyXG59XHJcblxyXG5pbnB1dFt0eXBlPXRleHRdLCBpbnB1dFt0eXBlPXBhc3N3b3JkXSB7XHJcbiAgICB3aWR0aDogMTUlO1xyXG4gICAgcGFkZGluZzogMTJweCAyMHB4O1xyXG4gICAgbWFyZ2luOiA4cHggMDtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XHJcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDIlO1xyXG4gICAgbWFyZ2luLXRvcDogMTB2aDtcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XHJcbiAgICBtYXJnaW46IDhweCAwO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOjEwdmg7XHJcbn1cclxuXHJcbmJ1dHRvbjpob3ZlciB7XHJcbiAgICBvcGFjaXR5OiAwLjg7XHJcbn1cclxuXHJcbi5jYW5jZWxidG4ge1xyXG4gICAgd2lkdGg6IGF1dG87XHJcbiAgICBwYWRkaW5nOiAxMHB4IDE4cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjQ0MzM2O1xyXG59XHJcbi5hY2VwdGJ0biB7XHJcbiAgICB3aWR0aDogYXV0bztcclxuICAgIHBhZGRpbmc6IDEwcHggMThweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMzNjY0RjQ7XHJcbn1cclxuLmltZ2NvbnRhaW5lciB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW46IDI0cHggMCAxMnB4IDA7XHJcbn1cclxuXHJcbmltZy5hdmF0YXIge1xyXG4gICAgd2lkdGg6IDQwJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxufVxyXG5cclxuLmNvbnRhaW5lciB7XHJcbiAgICBwYWRkaW5nOiAxNnB4O1xyXG59XHJcblxyXG5zcGFuLnBzdyB7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICBwYWRkaW5nLXRvcDogMTZweDtcclxufVxyXG5cclxuLyogQ2hhbmdlIHN0eWxlcyBmb3Igc3BhbiBhbmQgY2FuY2VsIGJ1dHRvbiBvbiBleHRyYSBzbWFsbCBzY3JlZW5zICovXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDMwMHB4KSB7XHJcbiAgICBzcGFuLnBzdyB7XHJcbiAgICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgICAgIGZsb2F0OiBub25lO1xyXG4gICAgfVxyXG4gICAgLmNhbmNlbGJ0biB7XHJcbiAgICAgICB3aWR0aDogMTAwJTtcclxuICAgIH1cclxufVxyXG5cclxuI3NuYWNrYmFyIHtcclxuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIG1pbi13aWR0aDogMjUwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogLTEyNXB4O1xyXG4gICBcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMnB4O1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHotaW5kZXg6IDE7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICBib3R0b206IDMwcHg7XHJcbiAgICBmb250LXNpemU6IDE3cHg7XHJcbn1cclxuI3NuYWNrYmFyLkdhbmFkb3Ige1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzA1OUYyRjtcclxufVxyXG4jc25hY2tiYXIuUGVyZGVkb3Ige1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIyNzFiMztcclxufVxyXG4jc25hY2tiYXIuc2hvdyB7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IGZhZGVpbiAwLjVzLCBmYWRlb3V0IDAuNXMgMi41cztcclxuICAgIGFuaW1hdGlvbjogZmFkZWluIDAuNXMsIGZhZGVvdXQgMC41cyAyLjVzO1xyXG59XHJcblxyXG4uaW5ncmVzZSB7XHJcbiAgICBmb250LXNpemU6IDMwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMzAlO1xyXG59XHJcblxyXG5ALXdlYmtpdC1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9IFxyXG4gICAgdG8ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9XHJcbiAgICB0byB7Ym90dG9tOiAzMHB4OyBvcGFjaXR5OiAxO31cclxufVxyXG5cclxuQC13ZWJraXQta2V5ZnJhbWVzIGZhZGVvdXQge1xyXG4gICAgZnJvbSB7Ym90dG9tOiAzMHB4OyBvcGFjaXR5OiAxO30gXHJcbiAgICB0byB7Ym90dG9tOiAwOyBvcGFjaXR5OiAwO31cclxufVxyXG5cclxuQGtleWZyYW1lcyBmYWRlb3V0IHtcclxuICAgIGZyb20ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9XHJcbiAgICB0byB7Ym90dG9tOiAwOyBvcGFjaXR5OiAwO31cclxufSJdfQ== */");
 
 /***/ }),
 
@@ -828,20 +876,28 @@ __webpack_require__.r(__webpack_exports__);
 let AdivinaElNumeroComponent = class AdivinaElNumeroComponent {
     constructor() {
         this.enviarJuego = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.ocultarEsperando = true;
+        this.ocultarIngrese = true;
         this.nuevoJuego = new _clases_juego_adivina__WEBPACK_IMPORTED_MODULE_2__["JuegoAdivina"]();
         console.info("numero Secreto:", this.nuevoJuego.numeroSecreto);
         this.ocultarVerificar = false;
     }
     generarnumero() {
+        this.focoEnInput();
+        this.ocultarIngrese = false;
         this.nuevoJuego.generarnumero();
         this.contador = 0;
+        this.ocultarEsperando = false;
     }
     verificar() {
+        this.focoEnInput();
         this.contador++;
         this.ocultarVerificar = true;
         console.info("numero Secreto:", this.nuevoJuego.gano);
         if (this.nuevoJuego.verificar()) {
+            this.ocultarEsperando = true;
             this.enviarJuego.emit(this.nuevoJuego);
+            this.ocultarIngrese = true;
             this.MostarMensaje("Sos un Genio!!!", true);
             this.nuevoJuego.numeroSecreto = 0;
         }
@@ -849,10 +905,10 @@ let AdivinaElNumeroComponent = class AdivinaElNumeroComponent {
             let mensaje;
             switch (this.contador) {
                 case 1:
-                    mensaje = "No, intento fallido, animo";
+                    mensaje = "Intento fallido, ¡Arriba! ";
                     break;
                 case 2:
-                    mensaje = "No,Te estaras Acercando???";
+                    mensaje = "No, ¿Te estaras Acercando? ";
                     break;
                 case 3:
                     mensaje = "No es, Yo crei que la tercera era la vencida.";
@@ -870,11 +926,12 @@ let AdivinaElNumeroComponent = class AdivinaElNumeroComponent {
                     mensaje = "Ya le erraste " + this.contador + " veces";
                     break;
             }
-            this.MostarMensaje("#" + this.contador + " " + mensaje + " ayuda :" + this.nuevoJuego.retornarAyuda());
+            this.MostarMensaje("#" + this.contador + " " + mensaje + ". Ayuda : " + this.nuevoJuego.retornarAyuda());
         }
         console.info("numero Secreto:", this.nuevoJuego.gano);
     }
     MostarMensaje(mensaje = "este es el mensaje", ganador = false) {
+        var modelo = this;
         this.Mensajes = mensaje;
         var x = document.getElementById("snackbar");
         if (ganador) {
@@ -882,13 +939,22 @@ let AdivinaElNumeroComponent = class AdivinaElNumeroComponent {
         }
         else {
             x.className = "show Perdedor";
+            this.ocultarEsperando = true;
         }
-        var modelo = this;
         setTimeout(function () {
             x.className = x.className.replace("show", "");
             modelo.ocultarVerificar = false;
+            modelo.ocultarEsperando = false;
+            if (ganador)
+                modelo.ocultarEsperando = true;
         }, 3000);
         console.info("objeto", x);
+    }
+    focoEnInput() {
+        setTimeout(() => {
+            document.getElementById("ingrese").value = null;
+            document.getElementById("ingrese").focus();
+        }, 1);
     }
     ngOnInit() {
     }
@@ -965,7 +1031,7 @@ AdivinaMasListadoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL2FnaWxpZGFkLWFyaXRtZXRpY2EvYWdpbGlkYWQtYXJpdG1ldGljYS5jb21wb25lbnQuY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("input[type=text], input[type=password] {\r\n    width: 50%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n    margin-left: 2%;\r\n    margin-top: 5vh;\r\n}\r\n\r\nbutton {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    margin-top:5vh;\r\n}\r\n\r\nbutton:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.cuenta {\r\n    margin-left: 80vh;\r\n    margin-top: 5vh; \r\n}\r\n\r\n.cancelbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #f44336;\r\n}\r\n\r\n.aceptbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #3664F4;\r\n}\r\n\r\n.imgcontainer {\r\n    text-align: center;\r\n    margin: 24px 0 12px 0;\r\n}\r\n\r\nimg.avatar {\r\n    width: 40%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\nspan.psw {\r\n    float: right;\r\n    padding-top: 16px;\r\n}\r\n\r\n/* Change styles for span and cancel button on extra small screens */\r\n\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n   \r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n\r\n#snackbar.Perdedor {\r\n    background-color: #2271b3;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n.ingrese {\r\n    font-size: 30px;\r\n    margin-left: 35%;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvYWdpbGlkYWQtYXJpdG1ldGljYS9hZ2lsaWRhZC1hcml0bWV0aWNhLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxVQUFVO0lBQ1Ysa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixxQkFBcUI7SUFDckIsc0JBQXNCO0lBQ3RCLHNCQUFzQjtJQUN0QixlQUFlO0lBQ2YsZUFBZTtBQUNuQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixZQUFZO0lBQ1osZUFBZTtJQUNmLFdBQVc7SUFDWCxjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksWUFBWTtBQUNoQjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksV0FBVztJQUNYLGtCQUFrQjtJQUNsQix5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSxXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLHlCQUF5QjtBQUM3Qjs7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxVQUFVO0lBQ1Ysa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksYUFBYTtBQUNqQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixpQkFBaUI7QUFDckI7O0FBRUEsb0VBQW9FOztBQUNwRTtJQUNJO09BQ0csY0FBYztPQUNkLFdBQVc7SUFDZDtJQUNBO09BQ0csV0FBVztJQUNkO0FBQ0o7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLG1CQUFtQjs7SUFFbkIsV0FBVztJQUNYLGtCQUFrQjtJQUNsQixrQkFBa0I7SUFDbEIsYUFBYTtJQUNiLGVBQWU7SUFDZixVQUFVO0lBQ1YsU0FBUztJQUNULFlBQVk7SUFDWixlQUFlO0FBQ25COztBQUNBO0lBQ0kseUJBQXlCO0FBQzdCOztBQUNBO0lBQ0kseUJBQXlCO0FBQzdCOztBQUNBO0lBQ0ksbUJBQW1CO0lBQ25CLGlEQUFpRDtJQUNqRCx5Q0FBeUM7QUFDN0M7O0FBRUE7SUFDSSxlQUFlO0lBQ2YsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksTUFBTSxTQUFTLEVBQUUsVUFBVSxDQUFDO0lBQzVCLElBQUksWUFBWSxFQUFFLFVBQVUsQ0FBQztBQUNqQzs7QUFFQTtJQUNJLE1BQU0sU0FBUyxFQUFFLFVBQVUsQ0FBQztJQUM1QixJQUFJLFlBQVksRUFBRSxVQUFVLENBQUM7QUFDakM7O0FBRUE7SUFDSSxNQUFNLFlBQVksRUFBRSxVQUFVLENBQUM7SUFDL0IsSUFBSSxTQUFTLEVBQUUsVUFBVSxDQUFDO0FBQzlCOztBQUVBO0lBQ0ksTUFBTSxZQUFZLEVBQUUsVUFBVSxDQUFDO0lBQy9CLElBQUksU0FBUyxFQUFFLFVBQVUsQ0FBQztBQUM5QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL2FnaWxpZGFkLWFyaXRtZXRpY2EvYWdpbGlkYWQtYXJpdG1ldGljYS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXRbdHlwZT10ZXh0XSwgaW5wdXRbdHlwZT1wYXNzd29yZF0ge1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIHBhZGRpbmc6IDEycHggMjBweDtcclxuICAgIG1hcmdpbjogOHB4IDA7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xyXG4gICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgIG1hcmdpbi1sZWZ0OiAyJTtcclxuICAgIG1hcmdpbi10b3A6IDV2aDtcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XHJcbiAgICBtYXJnaW46IDhweCAwO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOjV2aDtcclxufVxyXG5cclxuYnV0dG9uOmhvdmVyIHtcclxuICAgIG9wYWNpdHk6IDAuODtcclxufVxyXG5cclxuLmN1ZW50YSB7XHJcbiAgICBtYXJnaW4tbGVmdDogODB2aDtcclxuICAgIG1hcmdpbi10b3A6IDV2aDsgXHJcbn1cclxuXHJcbi5jYW5jZWxidG4ge1xyXG4gICAgd2lkdGg6IGF1dG87XHJcbiAgICBwYWRkaW5nOiAxMHB4IDE4cHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjQ0MzM2O1xyXG59XHJcbi5hY2VwdGJ0biB7XHJcbiAgICB3aWR0aDogYXV0bztcclxuICAgIHBhZGRpbmc6IDEwcHggMThweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMzNjY0RjQ7XHJcbn1cclxuLmltZ2NvbnRhaW5lciB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW46IDI0cHggMCAxMnB4IDA7XHJcbn1cclxuXHJcbmltZy5hdmF0YXIge1xyXG4gICAgd2lkdGg6IDQwJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxufVxyXG5cclxuLmNvbnRhaW5lciB7XHJcbiAgICBwYWRkaW5nOiAxNnB4O1xyXG59XHJcblxyXG5zcGFuLnBzdyB7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICBwYWRkaW5nLXRvcDogMTZweDtcclxufVxyXG5cclxuLyogQ2hhbmdlIHN0eWxlcyBmb3Igc3BhbiBhbmQgY2FuY2VsIGJ1dHRvbiBvbiBleHRyYSBzbWFsbCBzY3JlZW5zICovXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDMwMHB4KSB7XHJcbiAgICBzcGFuLnBzdyB7XHJcbiAgICAgICBkaXNwbGF5OiBibG9jaztcclxuICAgICAgIGZsb2F0OiBub25lO1xyXG4gICAgfVxyXG4gICAgLmNhbmNlbGJ0biB7XHJcbiAgICAgICB3aWR0aDogMTAwJTtcclxuICAgIH1cclxufVxyXG5cclxuI3NuYWNrYmFyIHtcclxuICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIG1pbi13aWR0aDogMjUwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogLTEyNXB4O1xyXG4gICBcclxuICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMnB4O1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHotaW5kZXg6IDE7XHJcbiAgICBsZWZ0OiA1MCU7XHJcbiAgICBib3R0b206IDMwcHg7XHJcbiAgICBmb250LXNpemU6IDE3cHg7XHJcbn1cclxuI3NuYWNrYmFyLkdhbmFkb3Ige1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzA1OUYyRjtcclxufVxyXG4jc25hY2tiYXIuUGVyZGVkb3Ige1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIyNzFiMztcclxufVxyXG4jc25hY2tiYXIuc2hvdyB7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IGZhZGVpbiAwLjVzLCBmYWRlb3V0IDAuNXMgMi41cztcclxuICAgIGFuaW1hdGlvbjogZmFkZWluIDAuNXMsIGZhZGVvdXQgMC41cyAyLjVzO1xyXG59XHJcblxyXG4uaW5ncmVzZSB7XHJcbiAgICBmb250LXNpemU6IDMwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMzUlO1xyXG59XHJcblxyXG5ALXdlYmtpdC1rZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9IFxyXG4gICAgdG8ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgZmFkZWluIHtcclxuICAgIGZyb20ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9XHJcbiAgICB0byB7Ym90dG9tOiAzMHB4OyBvcGFjaXR5OiAxO31cclxufVxyXG5cclxuQC13ZWJraXQta2V5ZnJhbWVzIGZhZGVvdXQge1xyXG4gICAgZnJvbSB7Ym90dG9tOiAzMHB4OyBvcGFjaXR5OiAxO30gXHJcbiAgICB0byB7Ym90dG9tOiAwOyBvcGFjaXR5OiAwO31cclxufVxyXG5cclxuQGtleWZyYW1lcyBmYWRlb3V0IHtcclxuICAgIGZyb20ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9XHJcbiAgICB0byB7Ym90dG9tOiAwOyBvcGFjaXR5OiAwO31cclxufSJdfQ== */");
 
 /***/ }),
 
@@ -989,6 +1055,7 @@ __webpack_require__.r(__webpack_exports__);
 let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
     constructor() {
         this.enviarJuego = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.ocultarEsperando = true;
         this.jugando = false;
         this.ocultarVerificar = true;
         this.Tiempo = 5;
@@ -997,9 +1064,10 @@ let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
     ngOnInit() {
     }
     NuevoJuego() {
-        this.nuevoJuego.resetearJuego();
+        this.focoEnInput();
         this.jugando = true;
         this.ocultarVerificar = false;
+        this.ocultarEsperando = false;
         this.nuevoJuego.generarCalculo();
         this.repetidor = setInterval(() => {
             this.Tiempo--;
@@ -1013,13 +1081,43 @@ let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
         }, 900);
     }
     verificar() {
-        if (this.nuevoJuego.verificar())
-            alert("Bien! No sos tan burr@!");
-        else
-            alert("jajaja batiste cualquiera!");
-        this.ocultarVerificar = false;
-        clearInterval(this.repetidor);
+        debugger;
+        if (this.nuevoJuego.verificar()) {
+            this.ocultarEsperando = true;
+            this.enviarJuego.emit(this.nuevoJuego);
+            this.MostarMensaje("¡Bien! No sos tan burr@!", true);
+        }
+        else {
+            this.MostarMensaje("Batiste cualquiera ; ). ¡Proba otra vez!", false);
+        }
         this.jugando = false;
+        this.nuevoJuego.resetearJuego();
+    }
+    MostarMensaje(mensaje = "este es el mensaje", ganador = false) {
+        var modelo = this;
+        this.mensaje = mensaje;
+        var x = document.getElementById("snackbar");
+        if (ganador) {
+            x.className = "show Ganador";
+        }
+        else {
+            x.className = "show Perdedor";
+            this.ocultarEsperando = true;
+        }
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+            modelo.ocultarVerificar = false;
+            modelo.ocultarEsperando = false;
+            if (ganador)
+                modelo.ocultarEsperando = true;
+        }, 3000);
+        console.info("objeto", x);
+    }
+    focoEnInput() {
+        setTimeout(() => {
+            document.getElementById("numIngresado").value = null;
+            document.getElementById("numIngresado").focus();
+        }, 1);
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1586,6 +1684,205 @@ PrincipalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/componentes/tateti/celda.ts":
+/*!*********************************************!*\
+  !*** ./src/app/componentes/tateti/celda.ts ***!
+  \*********************************************/
+/*! exports provided: MARCA_JUGADOR, Celda */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MARCA_JUGADOR", function() { return MARCA_JUGADOR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Celda", function() { return Celda; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+const MARCA_JUGADOR = { JUGADOR: "O", COMPU: "X" };
+class Celda {
+    get marca() {
+        return this._marca;
+    }
+    get jugador() {
+        return this._jugador;
+    }
+    set marca(matched) {
+        this._marca = matched;
+    }
+    set jugador(player) {
+        this._jugador = player;
+    }
+    constructor() {
+        this._jugador = "";
+        this._marca = false;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/tateti/tateti.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/componentes/tateti/tateti.component.css ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("div#tablero {\r\n    width:310px;\r\n    height:310px; \r\n    padding:0px; \r\n    border: 7px solid #999; \r\n    background-color:white; \r\n    margin: 20px auto; \r\n    cursor:pointer;\r\n}\r\n\r\ndiv#tablero div {\r\n    width:100px;\r\n    height:100px;\r\n    float:left; \r\n    margin:0px; \r\n    font-size: 90px; \r\n    text-align:center;\r\n}\r\n\r\n.celda1,.celda2,.celda3,.celda4,.celda5,.celda6 { \r\n    border-bottom: 5px solid black;\r\n}\r\n\r\n.celda1,.celda2,.celda4,.celda5,.celda7,.celda8 {\r\n    border-right: 5px solid black;\r\n}\r\n\r\ndiv#tablero > div:hover {\r\n    background-color:#ddd;\r\n}\r\n\r\ndiv#consola {\r\n    width:310px;\r\n    height:30px; \r\n    padding:7px; \r\n    border: \r\n    5px solid #999; \r\n    background-color:white; \r\n    margin: 10px auto; \r\n    text-align:center; \r\n    color:darkgreen;\r\n}\r\n\r\n.celda{\r\n    width:70px;height: 120px;\r\n}\r\n\r\n.tatetiValue{\r\n    color: #FFF;\r\n    text-align: center;\r\n    font:  100px arial, Serif;\r\n    text-shadow: 2px 2px 2px rgb(0, 0, 0);\r\n    content: 'O';\r\n}\r\n\r\nbutton {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    margin-top:5vh;\r\n}\r\n\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n\r\n#snackbar.Perdedor {\r\n    background-color: #2271b3;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvdGF0ZXRpL3RhdGV0aS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixXQUFXO0lBQ1gsc0JBQXNCO0lBQ3RCLHNCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsY0FBYztBQUNsQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1osVUFBVTtJQUNWLFVBQVU7SUFDVixlQUFlO0lBQ2YsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksOEJBQThCO0FBQ2xDOztBQUVBO0lBQ0ksNkJBQTZCO0FBQ2pDOztBQUVBO0lBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksV0FBVztJQUNYLFdBQVc7SUFDWCxXQUFXO0lBQ1g7a0JBQ2M7SUFDZCxzQkFBc0I7SUFDdEIsaUJBQWlCO0lBQ2pCLGlCQUFpQjtJQUNqQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksVUFBVSxDQUFDLGFBQWE7QUFDNUI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLHlCQUF5QjtJQUN6QixxQ0FBcUM7SUFDckMsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixZQUFZO0lBQ1osZUFBZTtJQUNmLFdBQVc7SUFDWCxjQUFjO0FBQ2xCOztBQUVBO0lBQ0k7T0FDRyxjQUFjO09BQ2QsV0FBVztJQUNkO0lBQ0E7T0FDRyxXQUFXO0lBQ2Q7QUFDSjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxrQkFBa0I7SUFDbEIsa0JBQWtCO0lBQ2xCLGFBQWE7SUFDYixlQUFlO0lBQ2YsVUFBVTtJQUNWLFNBQVM7SUFDVCxZQUFZO0lBQ1osZUFBZTtBQUNuQjs7QUFFQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFFQTtJQUNJLG1CQUFtQjtJQUNuQixpREFBaUQ7SUFDakQseUNBQXlDO0FBQzdDOztBQUVBO0lBQ0ksTUFBTSxTQUFTLEVBQUUsVUFBVSxDQUFDO0lBQzVCLElBQUksWUFBWSxFQUFFLFVBQVUsQ0FBQztBQUNqQzs7QUFFQTtJQUNJLE1BQU0sU0FBUyxFQUFFLFVBQVUsQ0FBQztJQUM1QixJQUFJLFlBQVksRUFBRSxVQUFVLENBQUM7QUFDakM7O0FBRUE7SUFDSSxNQUFNLFlBQVksRUFBRSxVQUFVLENBQUM7SUFDL0IsSUFBSSxTQUFTLEVBQUUsVUFBVSxDQUFDO0FBQzlCOztBQUVBO0lBQ0ksTUFBTSxZQUFZLEVBQUUsVUFBVSxDQUFDO0lBQy9CLElBQUksU0FBUyxFQUFFLFVBQVUsQ0FBQztBQUM5QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL3RhdGV0aS90YXRldGkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImRpdiN0YWJsZXJvIHtcclxuICAgIHdpZHRoOjMxMHB4O1xyXG4gICAgaGVpZ2h0OjMxMHB4OyBcclxuICAgIHBhZGRpbmc6MHB4OyBcclxuICAgIGJvcmRlcjogN3B4IHNvbGlkICM5OTk7IFxyXG4gICAgYmFja2dyb3VuZC1jb2xvcjp3aGl0ZTsgXHJcbiAgICBtYXJnaW46IDIwcHggYXV0bzsgXHJcbiAgICBjdXJzb3I6cG9pbnRlcjtcclxufVxyXG5cclxuZGl2I3RhYmxlcm8gZGl2IHtcclxuICAgIHdpZHRoOjEwMHB4O1xyXG4gICAgaGVpZ2h0OjEwMHB4O1xyXG4gICAgZmxvYXQ6bGVmdDsgXHJcbiAgICBtYXJnaW46MHB4OyBcclxuICAgIGZvbnQtc2l6ZTogOTBweDsgXHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxufVxyXG5cclxuLmNlbGRhMSwuY2VsZGEyLC5jZWxkYTMsLmNlbGRhNCwuY2VsZGE1LC5jZWxkYTYgeyBcclxuICAgIGJvcmRlci1ib3R0b206IDVweCBzb2xpZCBibGFjaztcclxufVxyXG5cclxuLmNlbGRhMSwuY2VsZGEyLC5jZWxkYTQsLmNlbGRhNSwuY2VsZGE3LC5jZWxkYTgge1xyXG4gICAgYm9yZGVyLXJpZ2h0OiA1cHggc29saWQgYmxhY2s7XHJcbn1cclxuXHJcbmRpdiN0YWJsZXJvID4gZGl2OmhvdmVyIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6I2RkZDtcclxufVxyXG5cclxuZGl2I2NvbnNvbGEge1xyXG4gICAgd2lkdGg6MzEwcHg7XHJcbiAgICBoZWlnaHQ6MzBweDsgXHJcbiAgICBwYWRkaW5nOjdweDsgXHJcbiAgICBib3JkZXI6IFxyXG4gICAgNXB4IHNvbGlkICM5OTk7IFxyXG4gICAgYmFja2dyb3VuZC1jb2xvcjp3aGl0ZTsgXHJcbiAgICBtYXJnaW46IDEwcHggYXV0bzsgXHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjsgXHJcbiAgICBjb2xvcjpkYXJrZ3JlZW47XHJcbn1cclxuXHJcbi5jZWxkYXtcclxuICAgIHdpZHRoOjcwcHg7aGVpZ2h0OiAxMjBweDtcclxufVxyXG5cclxuLnRhdGV0aVZhbHVle1xyXG4gICAgY29sb3I6ICNGRkY7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBmb250OiAgMTAwcHggYXJpYWwsIFNlcmlmO1xyXG4gICAgdGV4dC1zaGFkb3c6IDJweCAycHggMnB4IHJnYigwLCAwLCAwKTtcclxuICAgIGNvbnRlbnQ6ICdPJztcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XHJcbiAgICBtYXJnaW46IDhweCAwO1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOjV2aDtcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzAwcHgpIHtcclxuICAgIHNwYW4ucHN3IHtcclxuICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICAgZmxvYXQ6IG5vbmU7XHJcbiAgICB9XHJcbiAgICAuY2FuY2VsYnRuIHtcclxuICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG59XHJcblxyXG4jc25hY2tiYXIge1xyXG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG4gICAgbWluLXdpZHRoOiAyNTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMTI1cHg7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDJweDtcclxuICAgIHBhZGRpbmc6IDE2cHg7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB6LWluZGV4OiAxO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgYm90dG9tOiAzMHB4O1xyXG4gICAgZm9udC1zaXplOiAxN3B4O1xyXG59XHJcblxyXG4jc25hY2tiYXIuR2FuYWRvciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDU5RjJGO1xyXG59XHJcblxyXG4jc25hY2tiYXIuUGVyZGVkb3Ige1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzIyNzFiMztcclxufVxyXG5cclxuI3NuYWNrYmFyLnNob3cge1xyXG4gICAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxuICAgIC13ZWJraXQtYW5pbWF0aW9uOiBmYWRlaW4gMC41cywgZmFkZW91dCAwLjVzIDIuNXM7XHJcbiAgICBhbmltYXRpb246IGZhZGVpbiAwLjVzLCBmYWRlb3V0IDAuNXMgMi41cztcclxufVxyXG5cclxuQC13ZWJraXQta2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHtib3R0b206IDA7IG9wYWNpdHk6IDA7fSBcclxuICAgIHRvIHtib3R0b206IDMwcHg7IG9wYWNpdHk6IDE7fVxyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHtib3R0b206IDA7IG9wYWNpdHk6IDA7fVxyXG4gICAgdG8ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9XHJcbn1cclxuXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYWRlb3V0IHtcclxuICAgIGZyb20ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9IFxyXG4gICAgdG8ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgZmFkZW91dCB7XHJcbiAgICBmcm9tIHtib3R0b206IDMwcHg7IG9wYWNpdHk6IDE7fVxyXG4gICAgdG8ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/tateti/tateti.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/componentes/tateti/tateti.component.ts ***!
+  \********************************************************/
+/*! exports provided: TatetiComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TatetiComponent", function() { return TatetiComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _celda__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./celda */ "./src/app/componentes/tateti/celda.ts");
+/* harmony import */ var _clases_juego_tateti__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../clases/juego-tateti */ "./src/app/clases/juego-tateti.ts");
+var TatetiComponent_1;
+
+
+
+
+let TatetiComponent = TatetiComponent_1 = class TatetiComponent {
+    constructor() {
+        this.jugando = false;
+        this.nuevoJuego = new _clases_juego_tateti__WEBPACK_IMPORTED_MODULE_3__["JuegoTaTeTi"]();
+    }
+    NuevoJuego() {
+        this.resetearJuego();
+        this.jugando = true;
+    }
+    juegaJugador(indiceMarcado) {
+        if (this.turno && !this.celdas[indiceMarcado].marca) {
+            this.turno = false;
+            this.celdas[indiceMarcado].marca = true;
+            this.celdas[indiceMarcado].jugador = "O";
+            this.marcadaJugador.push(indiceMarcado);
+            this.verificar(this.marcadaJugador, TatetiComponent_1.GANA_JUGADOR);
+            if (this.ganaJugador == TatetiComponent_1.JUEGO_SIGUE) {
+                this.deshabilitarNoMarcada(indiceMarcado);
+                this.juegaCompu();
+            }
+            else {
+                this.mostrarMensaje("¡Ganaste, crack!", true);
+                this.jugando = false;
+            }
+        }
+    }
+    juegaCompu() {
+        debugger;
+        if (this.celdasSinMarcar.length > 0) {
+            let index;
+            let celda;
+            index = Math.floor(Math.random() * this.celdasSinMarcar.length);
+            this.celdas[this.celdasSinMarcar[index]].marca = true;
+            this.celdas[this.celdasSinMarcar[index]].jugador = "X";
+            this.marcadaCompu.push(index);
+            this.verificar(this.marcadaCompu, TatetiComponent_1.GANA_COMPU);
+            if (this.ganaJugador == TatetiComponent_1.JUEGO_SIGUE) {
+                this.turno = true;
+                this.deshabilitarNoMarcada(this.celdasSinMarcar[index]);
+            }
+            else {
+                this.mostrarMensaje("Perdiste. ¡Intentalo otra vez!", false);
+                this.jugando = false;
+            }
+        }
+    }
+    deshabilitarNoMarcada(index) {
+        for (let i = 0; i < this.celdasSinMarcar.length; i++) {
+            if (this.celdasSinMarcar[i] == index) {
+                this.celdasSinMarcar.splice(i, 1);
+                break;
+            }
+        }
+    }
+    mostrarMensaje(mensaje = "este es el mensaje", ganador = false) {
+        this.mensaje = mensaje;
+        var x = document.getElementById("snackbar");
+        if (ganador) {
+            x.className = "show Ganador";
+        }
+        else {
+            x.className = "show Perdedor";
+        }
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+        }, 3000);
+    }
+    verificar(celdasMarcadas, jugador) {
+        if (celdasMarcadas.length > 2) {
+            celdasMarcadas.sort((primero, segundo) => {
+                let retorno = 0;
+                if (primero > segundo) {
+                    retorno = 1;
+                }
+                else if (primero < segundo)
+                    retorno = -1;
+                return retorno;
+            });
+            if (celdasMarcadas[0] == 0) {
+                if ((celdasMarcadas[1] == 1 && celdasMarcadas[2] == 2) ||
+                    celdasMarcadas.find(celda => celda == 3) && celdasMarcadas.find(celda => celda == 6) ||
+                    celdasMarcadas.find(celda => celda == 4) && celdasMarcadas.find(celda => celda == 8)) {
+                    this.ganaJugador = jugador;
+                }
+            }
+            else if (celdasMarcadas.find(celda => celda == 2) && celdasMarcadas.find(celda => celda == 4) && celdasMarcadas.find(celda => celda == 6))
+                this.ganaJugador = jugador;
+            else if (celdasMarcadas.find(celda => celda == 2) && celdasMarcadas.find(celda => celda == 5) && celdasMarcadas.find(celda => celda == 8))
+                this.ganaJugador = jugador;
+            else if (celdasMarcadas.find(celda => celda == 3) && celdasMarcadas.find(celda => celda == 4) && celdasMarcadas.find(celda => celda == 5))
+                this.ganaJugador = jugador;
+            else if (celdasMarcadas.find(celda => celda == 6) && celdasMarcadas.find(celda => celda == 7) && celdasMarcadas.find(celda => celda == 8))
+                this.ganaJugador = jugador;
+            else if (celdasMarcadas.find(celda => celda == 3) && celdasMarcadas.find(celda => celda == 4) && celdasMarcadas.find(celda => celda == 5))
+                this.ganaJugador = jugador;
+            else if (celdasMarcadas.find(celda => celda == 0) && celdasMarcadas.find(celda => celda == 3) && celdasMarcadas.find(celda => celda == 6))
+                this.ganaJugador = jugador;
+            else if (celdasMarcadas.find(celda => celda == 1) && celdasMarcadas.find(celda => celda == 4) && celdasMarcadas.find(celda => celda == 7))
+                this.ganaJugador = jugador;
+        }
+    }
+    resetearJuego() {
+        this.ganaJugador = TatetiComponent_1.JUEGO_SIGUE;
+        this.celdasSinMarcar = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        this.celdasMarcadas = [];
+        this.marcadaJugador = [];
+        this.marcadaCompu = [];
+        this.celdas = [];
+        this.turno = true;
+        for (let i = 0; i < 9; i++) {
+            this.celdas.push(new _celda__WEBPACK_IMPORTED_MODULE_2__["Celda"]());
+        }
+    }
+    ngOnInit() {
+    }
+};
+TatetiComponent.JUEGO_SIGUE = 0;
+TatetiComponent.GANA_JUGADOR = 1;
+TatetiComponent.GANA_COMPU = 1;
+TatetiComponent = TatetiComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-tateti',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./tateti.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/tateti/tateti.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./tateti.component.css */ "./src/app/componentes/tateti/tateti.component.css")).default]
+    })
+], TatetiComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -1626,19 +1923,22 @@ const environment = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_4__["AppModule"])
     .catch(err => console.error(err));
 
 
