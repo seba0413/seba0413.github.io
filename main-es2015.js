@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n\n  <div style=\"text-align:center\">\n      <h1> ¡{{nuevoJuego.nombre}}! </h1>\n  </div>\n\n  <div *ngIf=\"!jugando\">\n    <h2 style=\"text-align:center\"><button  (click)=\"NuevoJuego()\">Jugar a Agilidad Aritmética </button></h2>\n  </div>\n\n  <div *ngIf=\"jugando\">\n    <h2 [hidden]=\"!jugando\" class=\"cuenta\"><span>Calcular:  {{nuevoJuego.primerNumero}} {{nuevoJuego.operador}} {{nuevoJuego.segundoNumero}} = </span></h2>      \n     \n    <label class=\"ingrese \"[hidden]=\"!jugando\"> Respuesta:  <input id=\"numIngresado\" [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\"/> </label>\n\n    <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar {{Tiempo}} </button></h2>     \n\n    <h5 style=\"text-align: center\"><p [hidden]=\"ocultarEsperando\" ><i class=\"fa fa-spinner fa-spin\"></i>Esperando que ingrese un número</p></h5>\n\n    <h3 [hidden]=\"!nuevoJuego.gano\" style=\"text-align: center\">¡Usted adivino el número!</h3>\n  </div>\n\n<div id=\"snackbar\">{{mensaje}}</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n\r\n  <div style=\"text-align:center\">\r\n      <h1> ¡{{nuevoJuego.nombre}}! </h1>\r\n  </div>\r\n\r\n  <div *ngIf=\"!jugando\">\r\n    <h2 style=\"text-align:center\"><button  (click)=\"NuevoJuego()\">Jugar a Agilidad Aritmética </button></h2>\r\n  </div>\r\n\r\n  <div *ngIf=\"jugando\">\r\n    <h2 [hidden]=\"!jugando\" class=\"cuenta\"><span>Calcular:  {{nuevoJuego.primerNumero}} {{nuevoJuego.operador}} {{nuevoJuego.segundoNumero}} = </span></h2>      \r\n     \r\n    <label class=\"ingrese \"[hidden]=\"!jugando\"> Respuesta:  <input id=\"numIngresado\" [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\"/> </label>\r\n\r\n    <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar {{Tiempo}} </button></h2>     \r\n\r\n    <h5 style=\"text-align: center\"><p [hidden]=\"ocultarEsperando\" ><i class=\"fa fa-spinner fa-spin\"></i>Esperando que ingrese un número</p></h5>\r\n\r\n    <h3 [hidden]=\"!nuevoJuego.gano\" style=\"text-align: center\">¡Usted adivino el número!</h3>\r\n  </div>\r\n\r\n<div id=\"snackbar\">{{mensaje}}</div>");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>anagrama works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div style=\"text-align:center\" [hidden] = \"ocultarNuevoJuego\">\n    <h1> ¡Anagramas! </h1>\n    <h2 style=\"text-align:center\"><button (click)= \"NuevoJuego()\" class=\"boton-nuevo\">Jugar a Anagramas </button></h2>\n</div>\n\n<div class=\"container\" [hidden] = \"ocultarBotones\">\n    <div class=\"row\">\n        <div class=\"col-12 div-palabra\">\n            <h2>Elegi una palabra</h2>\n        </div>        \n    </div>\n    <div class=\"row\">\n        <div class=\"col-12 div-palabra\" *ngFor=\"let palabra of palabras\">          \n            <button type=\"button\" class=\"btn btn-info btn-lg boton-palabra\" (click) = \"elegirPalabra(palabra)\">{{palabra}}</button>            \n        </div>\n    </div>\n</div>\n\n<div class=\"container\" [hidden] = \"ocultarInputs\">\n    <div class=\"row\">\n        <div class=\"col-12 div-palabra\">\n            <h2>¡La palabra {{palabraElegida}} tiene {{anagramas.length}} anagramas!</h2>\n        </div>        \n    </div>\n    <div class=\"row\">\n        <div class=\"col-12 div-palabra\" *ngFor=\"let anagrama of anagramas\">          \n            <input type=\"text\" name=\"inputsRespuesta\">            \n        </div>\n        <div class=\"col-12 div-palabra\">\n            <button type=\"button\" class=\"btn btn-info btn-lg\" (click) = \"obtenerRespuestas()\">Enviar Respuestas</button>\n        </div>\n    </div>\n</div>\n\n<div id=\"snackbar\">{{mensaje}}</div>\n \n\n");
 
 /***/ }),
 
@@ -201,7 +201,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("  <div>\r\n    <ul class=\"breadcrumb justify-content-center\">\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Card\">Juegos</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Adivina\">Adivina</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Agilidad\">Agilidad</a></li>\r\n      <!-- <!-- <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/AdivinaMasListado\">Adivina+listado</a></li> -->\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Tateti\">Tateti</a></li> \r\n    </ul>\r\n  </div>\r\n    ");
+/* harmony default export */ __webpack_exports__["default"] = ("  <div>\r\n    <ul class=\"breadcrumb justify-content-center\">\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Adivina\">Adivina</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Agilidad\">Agilidad</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Anagrama\">Anagramas</a></li> \r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Tateti\">Tateti</a></li> \r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Ppt\">Piedra, papel o tijera</a></li>\r\n      <li class=\"breadcrumb-item\"><a routerLink=\"/Juegos/Preguntados\">Preguntas de Fútbol</a></li>         \r\n    </ul>\r\n  </div>\r\n    ");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/ppt/ppt.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/ppt/ppt.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"text-align:center\" [hidden] = \"ocultarNuevoJuego\">\n        <h1> ¡Piedra Papel o Tijera! </h1>\n        <h2 style=\"text-align:center\"><button (click)= \"NuevoJuego()\" class=\"boton-nuevo\">Jugar a Piedra, papel o tijera </button></h2>\n    </div>\n\n<div class=\"container\" [hidden] = \"ocultarElementos\" >\n    <div class=\"row\">\n        <div class=\"col-12 div-palabra\">\n            <h1>ELEGI TU ELEMENTO</h1>\n        </div>\n    </div>\n    <div class= \"row divPpt\">        \n        <div class=\"col-xl-4\">\n            <a (click) = \"asignarElemento('piedra')\"><img src=\"{{imagenPiedra}}\" alt=\"\" class=\"media-object imagenPpt\"></a> \n        </div>\n        <div class=\"col-xl-4\" >\n            <a (click) = \"asignarElemento('papel')\"><img src=\"{{imagenPapel}}\" alt=\"\" class=\"media-object imagenPpt\"></a> \n        </div>\n        <div class=\"col-xl-4\">\n            <a (click) = \"asignarElemento('tijera')\"> <img src=\"{{imagenTijera}}\" alt=\"\" class=\"media-object imagenPpt\"></a>\n        </div>\n    </div>\n</div>  \n\n<div class=\"container\" [hidden] = \"ocultarResultados\" >\n    <div class=\"row\">\n        <div class=\"col-6\">\n            <div class=\"row div-palabra\">\n                <div class=\"col-12\">\n                    <h1>ELEMENTO ELEGIDO</h1>\n                </div>\n                <div class=\"col-12 divPpt\">\n                    <img src=\"{{elementoSeleccionado}}\" alt=\"\" class=\"imagenPpt\">\n                </div>\n            </div>            \n        </div>\n        <div class=\"col-6\">\n            <div class=\"row div-palabra\">\n                <div class=\"col-12\">\n                    <h1>ELEMENTO OPONENTE</h1>\n                </div>\n                <div class=\"col-12 divPpt\">\n                    <img src=\"{{elementoAsignado}}\" alt=\"\" class=\"imagenPpt\">\n                </div>\n            </div>            \n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-12 resultado\">\n            <h1 class=\"resultado\">{{textoResultado}}</h1>\n        </div>\n        <div class=\"col-12\">\n            <button type=\"button\" (click) = \"RepetirJuego()\" class=\"btn btn-success btn-lg\" > Probar otra vez</button>\n        </div>            \n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/preguntados/preguntados.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/preguntados/preguntados.component.html ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"text-align:center\" [hidden] = \"ocultarNuevoJuego\">\n    <h1> ¡Preguntas de fútbol! </h1>\n    <h2 style=\"text-align:center\"><button (click)= \"NuevoJuego()\" class=\"boton-nuevo\">Jugar a Preguntados Fútbol </button></h2>\n</div>\n\n<div class=\"container\" [hidden] = \"!ocultarNuevoJuego\">\n    <div class=\"row\">\n        <div class=\"col-12 div-palabra\">\n            <h2>{{pregunta}}</h2>\n        </div>        \n    </div>\n    <div class=\"row\" style=\"margin-top: 3vh\">\n        <div class=\"col-6 div-palabra\" *ngFor=\"let respuesta of respuestas\">          \n            <button type=\"button\" class=\"btn btn-info btn-lg boton-palabra\" (click) = \"eligeRespuesta(respuesta.id)\" name=\"botonesRespuestas\">{{respuesta.textoRespuesta}}</button>            \n        </div>\n    </div>\n    <div class=\"row\" [hidden] = \"ocultarBotonSiguiente\">\n        <div class=\"col-12 div-siguiente\">          \n            <button type=\"button\" class=\"btn btn-success btn-lg\" (click) = \"siguiente()\">Siguiente Pregunta</button>            \n        </div>\n    </div>\n</div> \n\n<div id=\"snackbar\">{{mensaje}}</div>");
 
 /***/ }),
 
@@ -476,13 +502,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./componentes/principal/principal.component */ "./src/app/componentes/principal/principal.component.ts");
 /* harmony import */ var _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./componentes/juegos/juegos.component */ "./src/app/componentes/juegos/juegos.component.ts");
 /* harmony import */ var _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./componentes/adivina-el-numero/adivina-el-numero.component */ "./src/app/componentes/adivina-el-numero/adivina-el-numero.component.ts");
-/* harmony import */ var _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./componentes/adivina-mas-listado/adivina-mas-listado.component */ "./src/app/componentes/adivina-mas-listado/adivina-mas-listado.component.ts");
-/* harmony import */ var _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./componentes/agilidad-aritmetica/agilidad-aritmetica.component */ "./src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.ts");
-/* harmony import */ var _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./componentes/agilidad-mas-listado/agilidad-mas-listado.component */ "./src/app/componentes/agilidad-mas-listado/agilidad-mas-listado.component.ts");
-/* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
-/* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
-/* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
-/* harmony import */ var _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./componentes/tateti/tateti.component */ "./src/app/componentes/tateti/tateti.component.ts");
+/* harmony import */ var _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./componentes/agilidad-aritmetica/agilidad-aritmetica.component */ "./src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.ts");
+/* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
+/* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
+/* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
+/* harmony import */ var _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./componentes/tateti/tateti.component */ "./src/app/componentes/tateti/tateti.component.ts");
+/* harmony import */ var _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./componentes/ppt/ppt.component */ "./src/app/componentes/ppt/ppt.component.ts");
+/* harmony import */ var _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./componentes/anagrama/anagrama.component */ "./src/app/componentes/anagrama/anagrama.component.ts");
+/* harmony import */ var _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./componentes/preguntados/preguntados.component */ "./src/app/componentes/preguntados/preguntados.component.ts");
+
 
 
 
@@ -499,15 +527,16 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: '', component: _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_3__["PrincipalComponent"] },
     { path: 'Principal', component: _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_3__["PrincipalComponent"] },
-    { path: 'error', component: _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_9__["ErrorComponent"] },
-    { path: 'Jugadores', component: _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_10__["JugadoresListadoComponent"] },
+    { path: 'error', component: _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_7__["ErrorComponent"] },
+    { path: 'Jugadores', component: _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_8__["JugadoresListadoComponent"] },
     { path: 'Juegos', component: _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_4__["JuegosComponent"], children: [
             { path: 'Adivina', component: _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_5__["AdivinaElNumeroComponent"] },
-            { path: 'AdivinaMasListado', component: _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_6__["AdivinaMasListadoComponent"] },
-            { path: 'Agilidad', component: _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_7__["AgilidadAritmeticaComponent"] },
-            { path: 'AgilidadaMasListado', component: _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_8__["AgilidadMasListadoComponent"] },
-            { path: 'Tateti', component: _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_12__["TatetiComponent"] },
-            { path: 'Card', component: _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_11__["JuegoscardComponent"] }
+            { path: 'Agilidad', component: _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_6__["AgilidadAritmeticaComponent"] },
+            { path: 'Tateti', component: _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_10__["TatetiComponent"] },
+            { path: 'Card', component: _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_9__["JuegoscardComponent"] },
+            { path: 'Ppt', component: _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_11__["PptComponent"] },
+            { path: 'Anagrama', component: _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_12__["AnagramaComponent"] },
+            { path: 'Preguntados', component: _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_13__["PreguntadosComponent"] }
         ]
     }
 ];
@@ -600,6 +629,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
 /* harmony import */ var _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./componentes/tateti/tateti.component */ "./src/app/componentes/tateti/tateti.component.ts");
+/* harmony import */ var _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./componentes/ppt/ppt.component */ "./src/app/componentes/ppt/ppt.component.ts");
+/* harmony import */ var _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./componentes/preguntados/preguntados.component */ "./src/app/componentes/preguntados/preguntados.component.ts");
+
+
 
 
 
@@ -642,7 +675,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__["InputJugadoresComponent"],
             _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__["JugadoresListadoComponent"],
             _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__["JuegoscardComponent"],
-            _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_21__["TatetiComponent"]
+            _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_21__["TatetiComponent"],
+            _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_22__["PptComponent"],
+            _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_23__["PreguntadosComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1192,7 +1227,7 @@ AgilidadMasListadoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL2FuYWdyYW1hL2FuYWdyYW1hLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".div-palabra {\r\n\r\n    margin-top: 2vh;\r\n    text-align: center;\r\n    color: blue;\r\n\r\n}\r\n\r\n.boton-nuevo {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 14px 20px;\r\n    /* margin: 8px 0; */\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    margin-top:5vh;\r\n}\r\n\r\n.boton-palabra {\r\n\r\n    width: 150px;\r\n    height: 50px;\r\n}\r\n\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n   \r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n\r\n#snackbar.Perdedor {\r\n    background-color: #2271b3;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n.ingrese {\r\n    font-size: 30px;\r\n    margin-left: 35%;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvYW5hZ3JhbWEvYW5hZ3JhbWEuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7SUFFSSxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLFdBQVc7O0FBRWY7O0FBRUE7SUFDSSx5QkFBeUI7SUFDekIsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsWUFBWTtJQUNaLGVBQWU7SUFDZixXQUFXO0lBQ1gsY0FBYztBQUNsQjs7QUFFQTs7SUFFSSxZQUFZO0lBQ1osWUFBWTtBQUNoQjs7QUFFQTtJQUNJO09BQ0csY0FBYztPQUNkLFdBQVc7SUFDZDtJQUNBO09BQ0csV0FBVztJQUNkO0FBQ0o7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLG1CQUFtQjs7SUFFbkIsV0FBVztJQUNYLGtCQUFrQjtJQUNsQixrQkFBa0I7SUFDbEIsYUFBYTtJQUNiLGVBQWU7SUFDZixVQUFVO0lBQ1YsU0FBUztJQUNULFlBQVk7SUFDWixlQUFlO0FBQ25COztBQUNBO0lBQ0kseUJBQXlCO0FBQzdCOztBQUNBO0lBQ0kseUJBQXlCO0FBQzdCOztBQUNBO0lBQ0ksbUJBQW1CO0lBQ25CLGlEQUFpRDtJQUNqRCx5Q0FBeUM7QUFDN0M7O0FBRUE7SUFDSSxlQUFlO0lBQ2YsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksTUFBTSxTQUFTLEVBQUUsVUFBVSxDQUFDO0lBQzVCLElBQUksWUFBWSxFQUFFLFVBQVUsQ0FBQztBQUNqQzs7QUFFQTtJQUNJLE1BQU0sU0FBUyxFQUFFLFVBQVUsQ0FBQztJQUM1QixJQUFJLFlBQVksRUFBRSxVQUFVLENBQUM7QUFDakM7O0FBRUE7SUFDSSxNQUFNLFlBQVksRUFBRSxVQUFVLENBQUM7SUFDL0IsSUFBSSxTQUFTLEVBQUUsVUFBVSxDQUFDO0FBQzlCOztBQUVBO0lBQ0ksTUFBTSxZQUFZLEVBQUUsVUFBVSxDQUFDO0lBQy9CLElBQUksU0FBUyxFQUFFLFVBQVUsQ0FBQztBQUM5QiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL2FuYWdyYW1hL2FuYWdyYW1hLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGl2LXBhbGFicmEge1xyXG5cclxuICAgIG1hcmdpbi10b3A6IDJ2aDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGNvbG9yOiBibHVlO1xyXG5cclxufVxyXG5cclxuLmJvdG9uLW51ZXZvIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XHJcbiAgICAvKiBtYXJnaW46IDhweCAwOyAqL1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOjV2aDtcclxufVxyXG5cclxuLmJvdG9uLXBhbGFicmEge1xyXG5cclxuICAgIHdpZHRoOiAxNTBweDtcclxuICAgIGhlaWdodDogNTBweDtcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMzAwcHgpIHtcclxuICAgIHNwYW4ucHN3IHtcclxuICAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICAgZmxvYXQ6IG5vbmU7XHJcbiAgICB9XHJcbiAgICAuY2FuY2VsYnRuIHtcclxuICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG59XHJcblxyXG4jc25hY2tiYXIge1xyXG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG4gICAgbWluLXdpZHRoOiAyNTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMTI1cHg7XHJcbiAgIFxyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAycHg7XHJcbiAgICBwYWRkaW5nOiAxNnB4O1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgei1pbmRleDogMTtcclxuICAgIGxlZnQ6IDUwJTtcclxuICAgIGJvdHRvbTogMzBweDtcclxuICAgIGZvbnQtc2l6ZTogMTdweDtcclxufVxyXG4jc25hY2tiYXIuR2FuYWRvciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDU5RjJGO1xyXG59XHJcbiNzbmFja2Jhci5QZXJkZWRvciB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjI3MWIzO1xyXG59XHJcbiNzbmFja2Jhci5zaG93IHtcclxuICAgIHZpc2liaWxpdHk6IHZpc2libGU7XHJcbiAgICAtd2Via2l0LWFuaW1hdGlvbjogZmFkZWluIDAuNXMsIGZhZGVvdXQgMC41cyAyLjVzO1xyXG4gICAgYW5pbWF0aW9uOiBmYWRlaW4gMC41cywgZmFkZW91dCAwLjVzIDIuNXM7XHJcbn1cclxuXHJcbi5pbmdyZXNlIHtcclxuICAgIGZvbnQtc2l6ZTogMzBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAzNSU7XHJcbn1cclxuXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7Ym90dG9tOiAwOyBvcGFjaXR5OiAwO30gXHJcbiAgICB0byB7Ym90dG9tOiAzMHB4OyBvcGFjaXR5OiAxO31cclxufVxyXG5cclxuQGtleWZyYW1lcyBmYWRlaW4ge1xyXG4gICAgZnJvbSB7Ym90dG9tOiAwOyBvcGFjaXR5OiAwO31cclxuICAgIHRvIHtib3R0b206IDMwcHg7IG9wYWNpdHk6IDE7fVxyXG59XHJcblxyXG5ALXdlYmtpdC1rZXlmcmFtZXMgZmFkZW91dCB7XHJcbiAgICBmcm9tIHtib3R0b206IDMwcHg7IG9wYWNpdHk6IDE7fSBcclxuICAgIHRvIHtib3R0b206IDA7IG9wYWNpdHk6IDA7fVxyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGZhZGVvdXQge1xyXG4gICAgZnJvbSB7Ym90dG9tOiAzMHB4OyBvcGFjaXR5OiAxO31cclxuICAgIHRvIHtib3R0b206IDA7IG9wYWNpdHk6IDA7fVxyXG59Il19 */");
 
 /***/ }),
 
@@ -1208,10 +1243,103 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnagramaComponent", function() { return AnagramaComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _anagramaObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./anagramaObject */ "./src/app/componentes/anagrama/anagramaObject.ts");
+
 
 
 let AnagramaComponent = class AnagramaComponent {
-    constructor() { }
+    constructor() {
+        this.palabras = [];
+        this.listaAnagramas = [
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("sofa", ["faso", "fosa", "safo"])),
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("camarera", ["caramera", "macerara", "recamara"])),
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("barco", ["braco", "broca", "cabro", "cobra"])),
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("cocina", ["accion", "cocian", "concia", "conica"])),
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("cadena", ["acedan", "canead", "cenada", "decana"])),
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("cerebro", ["becerro", "bercero", "cerbero", "recobre"])),
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("arcon", ["caron", "coran", "croan", "narco", "ronca"])),
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("pastor", ["partos", "portas", "postar", "postra", "potras", "raptos", "trapos", "tropas"])),
+            (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("raton", ["antro", "notar", "rotan", "tanor", "tonar", "torna", "trona"]))
+        ];
+        for (var i = 0; i < this.listaAnagramas.length; i++) {
+            this.palabras.push(this.listaAnagramas[i].palabra);
+        }
+        this.ocultarBotones = true;
+        this.ocultarInputs = true;
+        this.ocultarNuevoJuego = false;
+    }
+    NuevoJuego() {
+        this.ocultarNuevoJuego = true;
+        this.ocultarBotones = false;
+        this.resetearJuego();
+    }
+    elegirPalabra(palabra) {
+        this.ocultarBotones = true;
+        this.palabraElegida = palabra;
+        this.completarAnagramas();
+        this.ocultarBotones = true;
+        this.ocultarInputs = false;
+    }
+    completarAnagramas() {
+        for (var i = 0; i < this.listaAnagramas.length; i++) {
+            if (this.palabraElegida == this.listaAnagramas[i].palabra) {
+                for (var j = 0; j < this.listaAnagramas[i].anagramas.length; j++) {
+                    this.anagramas.push(this.listaAnagramas[i].anagramas[j]);
+                }
+                break;
+            }
+        }
+    }
+    obtenerRespuestas() {
+        this.inputsRespuesta = document.getElementsByName('inputsRespuesta');
+        for (var i = 0; i < this.inputsRespuesta.length; i++) {
+            this.respuestas.push(this.inputsRespuesta[i].value);
+        }
+        this.verificar();
+        this.mensajes();
+        this.ocultarInputs = true;
+        this.ocultarNuevoJuego = false;
+    }
+    verificar() {
+        var contador = 0;
+        this.gano = false;
+        for (var i = 0; i < this.respuestas.length; i++) {
+            for (var j = 0; j < this.anagramas.length; j++) {
+                if (this.respuestas[i] == this.anagramas[j]) {
+                    contador++;
+                }
+            }
+        }
+        if (contador == this.anagramas.length)
+            this.gano = true;
+    }
+    MostarMensaje(mensaje, ganador = false) {
+        this.mensaje = mensaje;
+        var x = document.getElementById("snackbar");
+        if (ganador) {
+            x.className = "show Ganador";
+        }
+        else {
+            x.className = "show Perdedor";
+        }
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+        }, 3000);
+    }
+    mensajes() {
+        if (this.gano)
+            this.MostarMensaje("¡Ganaste!", this.gano);
+        else
+            this.MostarMensaje("Segui participando", this.gano);
+    }
+    resetearJuego() {
+        this.anagramas = [];
+        this.palabraElegida = "";
+        this.inputsRespuesta = [];
+        this.respuestas = [];
+        this.gano = false;
+        this.mensaje = "";
+    }
     ngOnInit() {
     }
 };
@@ -1223,6 +1351,28 @@ AnagramaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], AnagramaComponent);
 
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/anagrama/anagramaObject.ts":
+/*!********************************************************!*\
+  !*** ./src/app/componentes/anagrama/anagramaObject.ts ***!
+  \********************************************************/
+/*! exports provided: AnagramaObject */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnagramaObject", function() { return AnagramaObject; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class AnagramaObject {
+    constructor(palabra, anagramas) {
+        this.palabra = palabra;
+        this.anagramas = anagramas;
+    }
+}
 
 
 /***/ }),
@@ -1631,6 +1781,290 @@ MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], MenuComponent);
 
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/ppt/ppt.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/componentes/ppt/ppt.component.css ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".imagenPpt{\r\n    width: 200px;\r\n    height: 200px;\r\n    /* float: left; */\r\n    margin-top: 5px; \r\n    border: 5px solid darkcyan ;\r\n    border-style: ridge;  \r\n}\r\n\r\n.divPpt {\r\n    margin-top: 30px;     \r\n}\r\n\r\n.div-palabra {\r\n\r\n    margin-top: 2vh;\r\n    margin-bottom: 3vh;\r\n    text-align: center;\r\n    align-content: center;\r\n    align-items: center;\r\n    color: blue;\r\n}\r\n\r\n.boton-nuevo {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 14px 20px;\r\n    /* margin: 8px 0; */\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    margin-top:5vh;\r\n}\r\n\r\n.resultado {\r\n    text-align: center;\r\n    font-size: 50px;\r\n    color: red;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHB0L3BwdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7SUFDYixpQkFBaUI7SUFDakIsZUFBZTtJQUNmLDJCQUEyQjtJQUMzQixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7O0lBRUksZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0I7SUFDbEIscUJBQXFCO0lBQ3JCLG1CQUFtQjtJQUNuQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSx5QkFBeUI7SUFDekIsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsWUFBWTtJQUNaLGVBQWU7SUFDZixXQUFXO0lBQ1gsY0FBYztBQUNsQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2YsVUFBVTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcHB0L3BwdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltYWdlblBwdHtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGhlaWdodDogMjAwcHg7XHJcbiAgICAvKiBmbG9hdDogbGVmdDsgKi9cclxuICAgIG1hcmdpbi10b3A6IDVweDsgXHJcbiAgICBib3JkZXI6IDVweCBzb2xpZCBkYXJrY3lhbiA7XHJcbiAgICBib3JkZXItc3R5bGU6IHJpZGdlOyAgXHJcbn1cclxuXHJcbi5kaXZQcHQge1xyXG4gICAgbWFyZ2luLXRvcDogMzBweDsgICAgIFxyXG59XHJcblxyXG4uZGl2LXBhbGFicmEge1xyXG5cclxuICAgIG1hcmdpbi10b3A6IDJ2aDtcclxuICAgIG1hcmdpbi1ib3R0b206IDN2aDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogYmx1ZTtcclxufVxyXG5cclxuLmJvdG9uLW51ZXZvIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICM0Q0FGNTA7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBwYWRkaW5nOiAxNHB4IDIwcHg7XHJcbiAgICAvKiBtYXJnaW46IDhweCAwOyAqL1xyXG4gICAgYm9yZGVyOiBub25lO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOjV2aDtcclxufVxyXG5cclxuLnJlc3VsdGFkbyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBmb250LXNpemU6IDUwcHg7XHJcbiAgICBjb2xvcjogcmVkO1xyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/ppt/ppt.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/componentes/ppt/ppt.component.ts ***!
+  \**************************************************/
+/*! exports provided: PptComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PptComponent", function() { return PptComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let PptComponent = class PptComponent {
+    constructor() {
+        this.imagenPiedra = "./assets/imagenes/piedra.jpg";
+        this.imagenPapel = "./assets/imagenes/papel.jpg";
+        this.imagenTijera = "./assets/imagenes/tijera.jpg";
+        this.ocultarNuevoJuego = false;
+        this.ocultarElementos = true;
+        this.ocultarResultados = true;
+    }
+    NuevoJuego() {
+        this.ocultarNuevoJuego = true;
+        this.ocultarElementos = false;
+    }
+    asignarElemento(elementoSeleccionado) {
+        this.elementoSeleccionado = elementoSeleccionado;
+        var numero = Math.floor((Math.random() * 100));
+        if (numero > 66)
+            this.elementoAsignado = this.imagenPiedra;
+        else if (numero > 33)
+            this.elementoAsignado = this.imagenPapel;
+        else
+            this.elementoAsignado = this.imagenTijera;
+        this.verificar(elementoSeleccionado);
+        this.ocultarElementos = true;
+        this.ocultarResultados = false;
+    }
+    verificar(elementoSeleccionado) {
+        switch (elementoSeleccionado) {
+            case 'piedra':
+                this.elementoSeleccionado = this.imagenPiedra;
+                if (this.elementoAsignado == this.imagenPiedra)
+                    this.textoResultado = "¡Empataste!";
+                else if (this.elementoAsignado == this.imagenPapel)
+                    this.textoResultado = "¡Perdiste!";
+                else
+                    this.textoResultado = "¡Ganaste!";
+                break;
+            case 'papel':
+                this.elementoSeleccionado = this.imagenPapel;
+                if (this.elementoAsignado == this.imagenPiedra)
+                    this.textoResultado = "¡Ganaste!";
+                else if (this.elementoAsignado == this.imagenPapel)
+                    this.textoResultado = "¡Empataste!";
+                else
+                    this.textoResultado = "¡Perdiste!";
+                break;
+            case 'tijera':
+                this.elementoSeleccionado = this.imagenTijera;
+                if (this.elementoAsignado == this.imagenPiedra)
+                    this.textoResultado = "¡Perdiste!";
+                else if (this.elementoAsignado == this.imagenPapel)
+                    this.textoResultado = "¡Ganaste!";
+                else
+                    this.textoResultado = "¡Empataste!";
+                break;
+        }
+    }
+    RepetirJuego() {
+        this.ocultarResultados = true;
+        this.ocultarElementos = false;
+        this.elementoAsignado = "";
+        this.elementoSeleccionado = "";
+        this.textoResultado = "";
+    }
+    ngOnInit() {
+    }
+};
+PptComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-ppt',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./ppt.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/ppt/ppt.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./ppt.component.css */ "./src/app/componentes/ppt/ppt.component.css")).default]
+    })
+], PptComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/preguntados/preguntados.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/componentes/preguntados/preguntados.component.css ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".boton-nuevo {\r\n    background-color: #4CAF50;\r\n    color: white;\r\n    padding: 14px 20px;\r\n    /* margin: 8px 0; */\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    margin-top:5vh;\r\n}\r\n\r\n.boton-palabra {\r\n\r\n    width: 350px;\r\n    height: 80px;\r\n}\r\n\r\n.div-palabra {\r\n\r\n    margin-top: 2vh;\r\n    text-align: center;\r\n    color: darkblue\r\n\r\n}\r\n\r\n.div-siguiente {\r\n    margin-left: 9%;\r\n    margin-top: 15vh;\r\n}\r\n\r\n.botonElegido {\r\n    width: 350px;\r\n    height: 80px;\r\n    background-color: lightblue;\r\n    color: white;\r\n    font-size: 20px;\r\n\r\n}\r\n\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n   \r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n\r\n#snackbar.Perdedor {\r\n    background-color: #2271b3;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n.ingrese {\r\n    font-size: 30px;\r\n    margin-left: 35%;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcHJlZ3VudGFkb3MvcHJlZ3VudGFkb3MuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtJQUN6QixZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLG1CQUFtQjtJQUNuQixZQUFZO0lBQ1osZUFBZTtJQUNmLFdBQVc7SUFDWCxjQUFjO0FBQ2xCOztBQUVBOztJQUVJLFlBQVk7SUFDWixZQUFZO0FBQ2hCOztBQUVBOztJQUVJLGVBQWU7SUFDZixrQkFBa0I7SUFDbEI7O0FBRUo7O0FBRUE7SUFDSSxlQUFlO0lBQ2YsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7SUFDWiwyQkFBMkI7SUFDM0IsWUFBWTtJQUNaLGVBQWU7O0FBRW5COztBQUdBO0lBQ0k7T0FDRyxjQUFjO09BQ2QsV0FBVztJQUNkO0lBQ0E7T0FDRyxXQUFXO0lBQ2Q7QUFDSjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsbUJBQW1COztJQUVuQixXQUFXO0lBQ1gsa0JBQWtCO0lBQ2xCLGtCQUFrQjtJQUNsQixhQUFhO0lBQ2IsZUFBZTtJQUNmLFVBQVU7SUFDVixTQUFTO0lBQ1QsWUFBWTtJQUNaLGVBQWU7QUFDbkI7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBQ0E7SUFDSSxtQkFBbUI7SUFDbkIsaURBQWlEO0lBQ2pELHlDQUF5QztBQUM3Qzs7QUFFQTtJQUNJLGVBQWU7SUFDZixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxNQUFNLFNBQVMsRUFBRSxVQUFVLENBQUM7SUFDNUIsSUFBSSxZQUFZLEVBQUUsVUFBVSxDQUFDO0FBQ2pDOztBQUVBO0lBQ0ksTUFBTSxTQUFTLEVBQUUsVUFBVSxDQUFDO0lBQzVCLElBQUksWUFBWSxFQUFFLFVBQVUsQ0FBQztBQUNqQzs7QUFFQTtJQUNJLE1BQU0sWUFBWSxFQUFFLFVBQVUsQ0FBQztJQUMvQixJQUFJLFNBQVMsRUFBRSxVQUFVLENBQUM7QUFDOUI7O0FBRUE7SUFDSSxNQUFNLFlBQVksRUFBRSxVQUFVLENBQUM7SUFDL0IsSUFBSSxTQUFTLEVBQUUsVUFBVSxDQUFDO0FBQzlCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcHJlZ3VudGFkb3MvcHJlZ3VudGFkb3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ib3Rvbi1udWV2byB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNENBRjUwO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgcGFkZGluZzogMTRweCAyMHB4O1xyXG4gICAgLyogbWFyZ2luOiA4cHggMDsgKi9cclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgbWFyZ2luLXRvcDo1dmg7XHJcbn1cclxuXHJcbi5ib3Rvbi1wYWxhYnJhIHtcclxuXHJcbiAgICB3aWR0aDogMzUwcHg7XHJcbiAgICBoZWlnaHQ6IDgwcHg7XHJcbn1cclxuXHJcbi5kaXYtcGFsYWJyYSB7XHJcblxyXG4gICAgbWFyZ2luLXRvcDogMnZoO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6IGRhcmtibHVlXHJcblxyXG59XHJcblxyXG4uZGl2LXNpZ3VpZW50ZSB7XHJcbiAgICBtYXJnaW4tbGVmdDogOSU7XHJcbiAgICBtYXJnaW4tdG9wOiAxNXZoO1xyXG59XHJcblxyXG4uYm90b25FbGVnaWRvIHtcclxuICAgIHdpZHRoOiAzNTBweDtcclxuICAgIGhlaWdodDogODBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0Ymx1ZTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGZvbnQtc2l6ZTogMjBweDtcclxuXHJcbn1cclxuXHJcblxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiAzMDBweCkge1xyXG4gICAgc3Bhbi5wc3cge1xyXG4gICAgICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICAgICBmbG9hdDogbm9uZTtcclxuICAgIH1cclxuICAgIC5jYW5jZWxidG4ge1xyXG4gICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICB9XHJcbn1cclxuXHJcbiNzbmFja2JhciB7XHJcbiAgICB2aXNpYmlsaXR5OiBoaWRkZW47XHJcbiAgICBtaW4td2lkdGg6IDI1MHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0xMjVweDtcclxuICAgXHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDJweDtcclxuICAgIHBhZGRpbmc6IDE2cHg7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB6LWluZGV4OiAxO1xyXG4gICAgbGVmdDogNTAlO1xyXG4gICAgYm90dG9tOiAzMHB4O1xyXG4gICAgZm9udC1zaXplOiAxN3B4O1xyXG59XHJcbiNzbmFja2Jhci5HYW5hZG9yIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwNTlGMkY7XHJcbn1cclxuI3NuYWNrYmFyLlBlcmRlZG9yIHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyMjcxYjM7XHJcbn1cclxuI3NuYWNrYmFyLnNob3cge1xyXG4gICAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxuICAgIC13ZWJraXQtYW5pbWF0aW9uOiBmYWRlaW4gMC41cywgZmFkZW91dCAwLjVzIDIuNXM7XHJcbiAgICBhbmltYXRpb246IGZhZGVpbiAwLjVzLCBmYWRlb3V0IDAuNXMgMi41cztcclxufVxyXG5cclxuLmluZ3Jlc2Uge1xyXG4gICAgZm9udC1zaXplOiAzMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDM1JTtcclxufVxyXG5cclxuQC13ZWJraXQta2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHtib3R0b206IDA7IG9wYWNpdHk6IDA7fSBcclxuICAgIHRvIHtib3R0b206IDMwcHg7IG9wYWNpdHk6IDE7fVxyXG59XHJcblxyXG5Aa2V5ZnJhbWVzIGZhZGVpbiB7XHJcbiAgICBmcm9tIHtib3R0b206IDA7IG9wYWNpdHk6IDA7fVxyXG4gICAgdG8ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9XHJcbn1cclxuXHJcbkAtd2Via2l0LWtleWZyYW1lcyBmYWRlb3V0IHtcclxuICAgIGZyb20ge2JvdHRvbTogMzBweDsgb3BhY2l0eTogMTt9IFxyXG4gICAgdG8ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgZmFkZW91dCB7XHJcbiAgICBmcm9tIHtib3R0b206IDMwcHg7IG9wYWNpdHk6IDE7fVxyXG4gICAgdG8ge2JvdHRvbTogMDsgb3BhY2l0eTogMDt9XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/preguntados/preguntados.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/componentes/preguntados/preguntados.component.ts ***!
+  \******************************************************************/
+/*! exports provided: PreguntadosComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PreguntadosComponent", function() { return PreguntadosComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./preguntadosObject */ "./src/app/componentes/preguntados/preguntadosObject.ts");
+/* harmony import */ var _respuestas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./respuestas */ "./src/app/componentes/preguntados/respuestas.ts");
+
+
+
+
+let PreguntadosComponent = class PreguntadosComponent {
+    constructor() {
+        this.listaPreguntas = [
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cual de estos equipos no es de la liga italiana?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Sevilla")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Torino")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Juventus")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Milan"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuantas copas del mundo tiene la seleccion argentina?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "No tiene")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "3")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "1")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "2"))], 4)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuántas tarjetas amarillas debe recibir un jugador para ser expulsado?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "1")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "2")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "3")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Las tarjetas amarillas no se acumulan"))], 2)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cómo se llama quien dirige a un equipo de fútbol?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Profesor Técnico")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Preparador Físico")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Secretario Técnico")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Director Técnico"))], 4)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuántas veces gano España la copa del mundo?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "1")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "2")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "3")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Ninguna"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿En qué país se jugo el mundial 2014?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Brasil")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Alemania")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Rusia")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Sudáfrica"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Qué equipos disputan el superclásico de España?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Atletico Madrid - Barcelona")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Atletico Madrid - Real Madrid")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Real Madrid - Barcelona")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Athletic Bilbao - Atletico Madrid"))], 3)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuál de estas palabras no tienen que ver con el fútbol?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Gol")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Penal")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Offside")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Corner corto"))], 4)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Qué jugador puede tomar la pelota con la mano además del arquero?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Ninguno")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Defensor")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Volante")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Delantero"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cada cuantos años se juega un mundial?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "2")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "4")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "6")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "8"))], 2)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Quién es el entrenador de la seleccion argentina?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Diego Maradona")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Alejandro Sabella")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Lionel Scaloni")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Caruso Lombardi"))], 3)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuál es el clasico del AC Milan?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Inter")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Juventus")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Roma")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Nápoli"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Quién ganó el mundial de 2014?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Argentina")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Brasil")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "España")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Alemania"))], 4)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿En qué país se jugo la copa América centenario 2016?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Chile")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Estados Unidos")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Uruguay")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Brasil"))], 2)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuál es el apellido de james, la figura de la selección de Colombia?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Rodriguez")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Valderrama")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Cordoba")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Falcao"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Qué selección fue la ganadora de la eurocopa 2012?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Italia")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "España")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Francia")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Alemania"))], 2)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Qué apodo tenia el jugador chileno Marcelo Salas?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "El príncipe")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "El torero")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "El niño")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "El matador"))], 4)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿De qué color es la camiseta del Liverpool?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Blanca")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Azul")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Roja")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Celeste"))], 3)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Qué arquero es famoso por hacer goles de tiro libre?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Navarro Montoya")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "José Luis Chilavert")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "René Higuita")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "El Pato Abbondanzieri"))], 2)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿A qué equipo le marcó Maradona el famoso gol con la mano de dios?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Inglaterra")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Brasil")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Alemania")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Italia"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿En qué país se jugó la copa del mundo 1978?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Holanda")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Argentina")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Inglaterra")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Estados Unidos"))], 2)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cómo se apoda la seleccion de Colombia?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "La Amarilla")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Los Cafeteros")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "La Albiceleste")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Los Ticos"))], 2)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Qué seña debe hacer un árbitro cuando aplica la ley de ventaja?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Las dos manos adelante")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Una mano arriba y la otra adelante")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Ninguna")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Soplar el silbato"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuál es la duración aproximada de un mundial?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "60 días")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "45 días")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "30 días")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "20 días"))], 3)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿A partir de qué mundial el ganador se lleva 3 puntos en vez de dos?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "1986")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "1990")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "1994")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "1998"))], 3)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Qué debe hacer el árbitro para señalar un tiro libre directo?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Levantar las dos manos y soplar el silbato")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Levantar una mano y soplar el silbato")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Sólo soplar su silbato")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Ninguna de las anteriores"))], 2)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cómo se apoda Rosario Central?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "La Lepra")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "El Bicho")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Los Quemeros")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Los Canallas"))], 4)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuál de estos apodos no se corresponde con San Lorenzo de Almagro?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Cuervos")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Matadores")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Fortin")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Ciclón"))], 3)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Quién es el técnico del Atlético Madrid?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Diego Simeone")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Pep Guardiola")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Mauricio Pochettino")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Jose Mourinho"))], 1)),
+            (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Qué país ganó el mundial Corea-Japon 2002?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Brasil")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Italia")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Alemania")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "España"))], 1)),
+        ];
+        this.ocultarNuevoJuego = false;
+        this.ocultarBotonSiguiente = true;
+        this.contador = 0;
+    }
+    NuevoJuego() {
+        this.pregunta = this.listaPreguntas[this.contador].pregunta;
+        this.respuestas = this.listaPreguntas[this.contador].respuestas;
+        this.respuestaCorrecta = this.listaPreguntas[this.contador].idRespuestaCorrecta;
+        this.ocultarNuevoJuego = true;
+    }
+    eligeRespuesta(id) {
+        if (id == this.respuestaCorrecta) {
+            this.gano = true;
+            this.MostarMensaje("¡Respuesta correcta!", this.gano);
+        }
+        else {
+            this.gano = false;
+            this.MostarMensaje("Le pifiaste che", this.gano);
+        }
+        this.ocultarBotonSiguiente = false;
+        this.deshabilitarBotones(id - 1);
+    }
+    siguiente() {
+        this.contador++;
+        this.pregunta = this.listaPreguntas[this.contador].pregunta;
+        this.respuestas = this.listaPreguntas[this.contador].respuestas;
+        this.respuestaCorrecta = this.listaPreguntas[this.contador].idRespuestaCorrecta;
+        this.ocultarBotonSiguiente = true;
+    }
+    deshabilitarBotones(index) {
+        this.botonesRespuesta = document.getElementsByName("botonesRespuestas");
+        for (var i = 0; i < this.botonesRespuesta.length; i++) {
+            if (i == index) {
+                this.botonesRespuesta[i].className = "botonElegido";
+                this.botonesRespuesta[i].setAttribute("disabled", "");
+            }
+            else
+                this.botonesRespuesta[i].setAttribute("disabled", "");
+        }
+    }
+    MostarMensaje(mensaje, ganador = false) {
+        this.mensaje = mensaje;
+        var x = document.getElementById("snackbar");
+        if (ganador) {
+            x.className = "show Ganador";
+        }
+        else {
+            x.className = "show Perdedor";
+        }
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+        }, 3000);
+    }
+    ngOnInit() {
+    }
+};
+PreguntadosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-preguntados',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./preguntados.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/preguntados/preguntados.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./preguntados.component.css */ "./src/app/componentes/preguntados/preguntados.component.css")).default]
+    })
+], PreguntadosComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/preguntados/preguntadosObject.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/componentes/preguntados/preguntadosObject.ts ***!
+  \**************************************************************/
+/*! exports provided: PreguntadosObject */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PreguntadosObject", function() { return PreguntadosObject; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class PreguntadosObject {
+    constructor(pregunta, respuestas, id) {
+        this.pregunta = pregunta;
+        this.respuestas = respuestas;
+        this.idRespuestaCorrecta = id;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/preguntados/respuestas.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/componentes/preguntados/respuestas.ts ***!
+  \*******************************************************/
+/*! exports provided: Respuestas */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Respuestas", function() { return Respuestas; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Respuestas {
+    constructor(id, textoRespuesta) {
+        this.id = id;
+        this.textoRespuesta = textoRespuesta;
+    }
+}
 
 
 /***/ }),
