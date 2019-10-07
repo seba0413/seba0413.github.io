@@ -1277,6 +1277,7 @@ let AnagramaComponent = class AnagramaComponent {
         this.ocultarBotones = true;
         this.palabraElegida = palabra;
         this.completarAnagramas();
+        console.log(this.anagramas);
         this.ocultarBotones = true;
         this.ocultarInputs = false;
     }
