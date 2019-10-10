@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n        <a class=\"navbar-brand\" href=\"#\">Home</a>\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n          <span class=\"navbar-toggler-icon\"></span>\n        </button>\n      \n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n          <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#\">Ingresar <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Registrarse <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://github.com/seba0413\">GitHub <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLink=\"/QuienSoy\">Quien Soy</a>\n            </li>\n          </ul>\n          <span class=\"form-inline my-2 my-lg-0\">\n              Sebastian Pasquini\n          </span>\n        </div>\n      </nav>\n\n<div class=\"panel panel-default\">\n    <div class=\"hero-text\">\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n        <a class=\"navbar-brand\" href=\"/Principal\">Home</a>\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n          <span class=\"navbar-toggler-icon\"></span>\n        </button>\n      \n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n          <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://github.com/seba0413\">GitHub <span class=\"sr-only\">(current)</span></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLink=\"/QuienSoy\">Quien Soy</a>\n            </li>\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"#\">Salir <span class=\"sr-only\">(current)</span></a>\n              </li>\n          </ul>\n          <span class=\"form-inline my-2 my-lg-0\">\n              Sebastian Pasquini\n          </span>\n        </div>\n      </nav>\n\n<div class=\"panel panel-default\">\n    <div class=\"hero-text\">\n        <h1 style=\"font-size:50px\">Sala de Juegos</h1>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -175,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul class=\"nav nav-pills nav-justified\">\n    <li class=\"active\"><a routerLink=\"/Principal\">Ir a inicio</a></li>\n    <li><a (click)=\"TraerTodos()\">Todos los jugadores</a></li>\n    <li><a (click)=\"TraerGanadores()\">Los ganadores</a></li>\n    <li><a (click)=\"TraerPerdedores()\">Los perdedores</a></li>\n  </ul>\n\n  <table class=\"table table-condensed\">\n    <thead>\n      <tr>\n        <th>usuario</th>\n        <th>cuit</th>\n        <th>sexo</th>\n        <th>gano</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let jugador of listado\" >\n        <td>{{jugador.usuario}} </td>\n        <td>{{jugador.cuit}} </td> \n        <!-- <td>{{jugador.sexo | sexo| uppercase}} </td>  -->\n        <td>{{jugador.gano}} </td> \n        \n      </tr>\n     \n    </tbody>\n  </table>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera>  </app-cabecera>\n<h2 style=\"text-align: center; color: darkblue;\">Listado de Jugadores</h2><br>\n\n<table class=\"table table-striped\" *ngIf= \"datos && datos.length > 0\">\n    <thead>\n      <tr>\n        <th>Jugador</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let dato of datos\">\n        <td>{{dato.jugador}} </td> \n      </tr>     \n    </tbody>\n</table>");
 
 /***/ }),
 
@@ -188,7 +188,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<table class=\"table table-condensed\">\n    <thead>\n      <tr>\n        <th>Juego</th>\n        <th>Jugador</th>\n        <th>Resultado</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let juego of listado\">\n        <td>{{juego.nombre}} </td>\n        <td>{{juego.jugador}} </td> \n        <td *ngIf=\"juego.gano\">Gano </td>   \n        <td *ngIf=\"!juego.gano\">Perdio</td>     \n      </tr>     \n    </tbody>\n</table>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera>  </app-cabecera>\n<h2 style=\"text-align: center; color: darkblue;\">Listado de Resultados</h2><br>\n\n<table class=\"table table-striped\" *ngIf= \"jugadas && jugadas.length > 0\">\n    <thead>\n      <tr>\n        <th>Juego</th>\n        <th>Jugador</th>\n        <th>Resultado</th>\n        <th>Fecha</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let juego of jugadas\">\n        <td>{{juego.nombreJuego}} </td>\n        <td>{{juego.jugador}} </td> \n        <td >{{juego.resultado}}</td>\n        <td>{{juego.fecha}}</td>     \n      </tr>     \n    </tbody>\n</table>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/login/login.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/login/login.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <a class=\"navbar-brand\" (click) = \"ingresar()\">Ingresar</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n  \n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n      <ul class=\"navbar-nav mr-auto\">\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" (click) = \"registrarse()\">Registrarse <span class=\"sr-only\">(current)</span></a>\n        </li>\n      </ul>\n      <span class=\"form-inline my-2 my-lg-0\">\n          Sebastian Pasquini\n      </span>\n    </div>\n  </nav>\n\n<div class=\"container\" [hidden] = \"ocultarImagen\">\n    <div class=\"row\">\n        <div class=\"col-12 div-imagen\">\n            <h1 style=\"font-size:50px; color: blue;\">Sala de Juegos</h1><br>\n            <img src=\"./assets/imagenes/salaJuegos.jpg\" alt=\"\" class=\"estilo-imagen\" >\n        </div>\n    </div>\n</div>\n\n\n<form [hidden] = \"ocultarRegistro\" class=\"estilo-form\">\n    <div class=\"form-group\">\n        <h3>REGISTRO DE USUARIO</h3>\n    </div>\n    <div class=\"form-group\">\n        <input type=\"text\" [(ngModel)] = \"emailNuevo\" name=\"emailNuevo\"  placeholder=\"Ingrese un email \">\n    </div>\n    <div class=\"form-group\">\n        <input type=\"password\" [(ngModel)] = \"passwordNuevo\" name=\"passwordNuevo\" placeholder=\"Ingrese una contraseña\">\n    </div>\n    <div class=\"form-group\">\n        <input type=\"password\" [(ngModel)] = \"confirm\" name=\"confirm\" placeholder=\"Confirme la contraseña\">\n    </div>\n    <div class=\"form-group\">\n        <button type=\"button\" (click) = \"onRegister()\" class=\"btn btn-success btn-lg estilo-boton\">Registrarse</button>\n    </div>\n</form>\n\n<form [hidden] = \"ocultarIngreso\" class=\"estilo-form\">\n    <div class=\"form-group\">\n        <h3>INGRESO DE USUARIO</h3>\n    </div>\n    <div class=\"form-group\">\n        <input type=\"text\" [(ngModel)] = \"email\" name=\"usuarioLogueado\" placeholder=\"Ingrese su usuario\">\n    </div>\n    <div class=\"form-group\">\n        <input type=\"password\" [(ngModel)] = \"password\" name=\"contrasenaUsuarioLogueado\"  placeholder=\"Ingrese su contraseña\">\n    </div>\n    <div class=\"form-group\">\n        <button type=\"button\" (click) = \"onLogin()\" class=\"btn btn-success btn-lg estilo-boton\">Ingresar</button>\n    </div>\n</form>\n\n");
 
 /***/ }),
 
@@ -240,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera>  </app-cabecera>\r\n<div class=\"container\" >\r\n    <ul class=\"list-group\">\r\n        <li class=\"list-group-item cab\">           \r\n          <div class=\"media-body\">\r\n              <div class=\"hero-text\">\r\n                  <h4 >Menú Principal</h4>\r\n              </div>\r\n            </div> \r\n          </li> \r\n        <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos/Card\">\r\n            <div class=\"media\">\r\n              <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/1.jpg\" class=\"media-object imagenDeMenu\" >\r\n              </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Juegos</h4>\r\n                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n            <a routerLink=\"/Listado\">\r\n              <div class=\"media\">\r\n                  <div class=\"media-left\">\r\n                      <img src=\"./assets/imagenes/2.jpg\" class=\"media-object imagenDeMenu\" >\r\n                    </div>\r\n                <div class=\"media-body\">\r\n                  <h4 class=\"media-heading\">Listados de resultados</h4>\r\n                  <p>Los listados de los resultados con ordenamiento y busqueda</p>\r\n                </div>                \r\n              </div> \r\n            </a>\r\n          </li>\r\n          <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/3.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Configuraci&oacute;n</h4>\r\n                <p>Ajustes de la aplicacion y los métodos de autentificación</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n          <a routerLink=\"/Jugadores\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/4.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Jugadores</h4>\r\n                <p>Listado de jugadores</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>   \r\n      </ul>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-cabecera>  </app-cabecera>\r\n<div class=\"container\" >\r\n    <ul class=\"list-group\">\r\n        <li class=\"list-group-item cab\">           \r\n          <div class=\"media-body\">\r\n              <div class=\"hero-text\">\r\n                  <h4 >Menú Principal</h4>\r\n              </div>\r\n            </div> \r\n          </li> \r\n        <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Juegos/Card\">\r\n            <div class=\"media\">\r\n              <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/1.jpg\" class=\"media-object imagenDeMenu\" >\r\n              </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Juegos</h4>\r\n                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-dark\">\r\n            <a routerLink=\"/Listado\">\r\n              <div class=\"media\">\r\n                  <div class=\"media-left\">\r\n                      <img src=\"./assets/imagenes/2.jpg\" class=\"media-object imagenDeMenu\" >\r\n                    </div>\r\n                <div class=\"media-body\">\r\n                  <h4 class=\"media-heading\">Listados de resultados</h4>\r\n                  <p>¡Mira todos los resultados que tuvieron los que ya jugaron y competí contra ellos! </p>\r\n                </div>                \r\n              </div> \r\n            </a>\r\n          </li>\r\n        <li class=\"list-group-item list-group-item-action list-group-item-success\">\r\n          <a routerLink=\"/Jugadores\">\r\n            <div class=\"media\">\r\n                <div class=\"media-left\">\r\n                    <img src=\"./assets/imagenes/4.jpg\" class=\"media-object imagenDeMenu\" >\r\n                  </div>\r\n              <div class=\"media-body\">\r\n                <h4 class=\"media-heading\">Jugadores</h4>\r\n                <p>Listado de jugadores</p>\r\n              </div>             \r\n            </div> \r\n          </a>\r\n        </li>   \r\n      </ul>\r\n</div>");
 
 /***/ }),
 
@@ -510,6 +523,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./componentes/ppt/ppt.component */ "./src/app/componentes/ppt/ppt.component.ts");
 /* harmony import */ var _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./componentes/anagrama/anagrama.component */ "./src/app/componentes/anagrama/anagrama.component.ts");
 /* harmony import */ var _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./componentes/preguntados/preguntados.component */ "./src/app/componentes/preguntados/preguntados.component.ts");
+/* harmony import */ var _componentes_login_login_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./componentes/login/login.component */ "./src/app/componentes/login/login.component.ts");
+/* harmony import */ var _componentes_listado_de_resultados_listado_de_resultados_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./componentes/listado-de-resultados/listado-de-resultados.component */ "./src/app/componentes/listado-de-resultados/listado-de-resultados.component.ts");
+
+
 
 
 
@@ -525,10 +542,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: '', component: _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_3__["PrincipalComponent"] },
+    { path: '', component: _componentes_login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"] },
     { path: 'Principal', component: _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_3__["PrincipalComponent"] },
     { path: 'error', component: _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_7__["ErrorComponent"] },
     { path: 'Jugadores', component: _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_8__["JugadoresListadoComponent"] },
+    { path: 'Listado', component: _componentes_listado_de_resultados_listado_de_resultados_component__WEBPACK_IMPORTED_MODULE_15__["ListadoDeResultadosComponent"] },
     { path: 'Juegos', component: _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_4__["JuegosComponent"], children: [
             { path: 'Adivina', component: _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_5__["AdivinaElNumeroComponent"] },
             { path: 'Agilidad', component: _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_6__["AgilidadAritmeticaComponent"] },
@@ -611,26 +629,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./componentes/principal/principal.component */ "./src/app/componentes/principal/principal.component.ts");
-/* harmony import */ var _componentes_cabecera_cabecera_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./componentes/cabecera/cabecera.component */ "./src/app/componentes/cabecera/cabecera.component.ts");
-/* harmony import */ var _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./componentes/juegos/juegos.component */ "./src/app/componentes/juegos/juegos.component.ts");
-/* harmony import */ var _componentes_menu_menu_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./componentes/menu/menu.component */ "./src/app/componentes/menu/menu.component.ts");
-/* harmony import */ var _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./componentes/adivina-el-numero/adivina-el-numero.component */ "./src/app/componentes/adivina-el-numero/adivina-el-numero.component.ts");
-/* harmony import */ var _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./componentes/adivina-mas-listado/adivina-mas-listado.component */ "./src/app/componentes/adivina-mas-listado/adivina-mas-listado.component.ts");
-/* harmony import */ var _componentes_listado_de_resultados_listado_de_resultados_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./componentes/listado-de-resultados/listado-de-resultados.component */ "./src/app/componentes/listado-de-resultados/listado-de-resultados.component.ts");
-/* harmony import */ var _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./componentes/agilidad-aritmetica/agilidad-aritmetica.component */ "./src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.ts");
-/* harmony import */ var _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./componentes/agilidad-mas-listado/agilidad-mas-listado.component */ "./src/app/componentes/agilidad-mas-listado/agilidad-mas-listado.component.ts");
-/* harmony import */ var _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./componentes/anagrama/anagrama.component */ "./src/app/componentes/anagrama/anagrama.component.ts");
-/* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
-/* harmony import */ var _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./componentes/input-jugadores/input-jugadores.component */ "./src/app/componentes/input-jugadores/input-jugadores.component.ts");
-/* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
-/* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
-/* harmony import */ var _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./componentes/tateti/tateti.component */ "./src/app/componentes/tateti/tateti.component.ts");
-/* harmony import */ var _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./componentes/ppt/ppt.component */ "./src/app/componentes/ppt/ppt.component.ts");
-/* harmony import */ var _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./componentes/preguntados/preguntados.component */ "./src/app/componentes/preguntados/preguntados.component.ts");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/es2015/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+/* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/es2015/index.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/es2015/index.js");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./componentes/principal/principal.component */ "./src/app/componentes/principal/principal.component.ts");
+/* harmony import */ var _componentes_cabecera_cabecera_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./componentes/cabecera/cabecera.component */ "./src/app/componentes/cabecera/cabecera.component.ts");
+/* harmony import */ var _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./componentes/juegos/juegos.component */ "./src/app/componentes/juegos/juegos.component.ts");
+/* harmony import */ var _componentes_menu_menu_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./componentes/menu/menu.component */ "./src/app/componentes/menu/menu.component.ts");
+/* harmony import */ var _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./componentes/adivina-el-numero/adivina-el-numero.component */ "./src/app/componentes/adivina-el-numero/adivina-el-numero.component.ts");
+/* harmony import */ var _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./componentes/adivina-mas-listado/adivina-mas-listado.component */ "./src/app/componentes/adivina-mas-listado/adivina-mas-listado.component.ts");
+/* harmony import */ var _componentes_listado_de_resultados_listado_de_resultados_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./componentes/listado-de-resultados/listado-de-resultados.component */ "./src/app/componentes/listado-de-resultados/listado-de-resultados.component.ts");
+/* harmony import */ var _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./componentes/agilidad-aritmetica/agilidad-aritmetica.component */ "./src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.ts");
+/* harmony import */ var _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./componentes/agilidad-mas-listado/agilidad-mas-listado.component */ "./src/app/componentes/agilidad-mas-listado/agilidad-mas-listado.component.ts");
+/* harmony import */ var _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./componentes/anagrama/anagrama.component */ "./src/app/componentes/anagrama/anagrama.component.ts");
+/* harmony import */ var _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./componentes/error/error.component */ "./src/app/componentes/error/error.component.ts");
+/* harmony import */ var _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./componentes/input-jugadores/input-jugadores.component */ "./src/app/componentes/input-jugadores/input-jugadores.component.ts");
+/* harmony import */ var _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./componentes/jugadores-listado/jugadores-listado.component */ "./src/app/componentes/jugadores-listado/jugadores-listado.component.ts");
+/* harmony import */ var _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./componentes/juegoscard/juegoscard.component */ "./src/app/componentes/juegoscard/juegoscard.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./componentes/tateti/tateti.component */ "./src/app/componentes/tateti/tateti.component.ts");
+/* harmony import */ var _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./componentes/ppt/ppt.component */ "./src/app/componentes/ppt/ppt.component.ts");
+/* harmony import */ var _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./componentes/preguntados/preguntados.component */ "./src/app/componentes/preguntados/preguntados.component.ts");
+/* harmony import */ var _componentes_login_login_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./componentes/login/login.component */ "./src/app/componentes/login/login.component.ts");
+
+
+
+
+// FIREBASE
+
+
+
 
 
 
@@ -660,33 +693,40 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-            _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_6__["PrincipalComponent"],
-            _componentes_cabecera_cabecera_component__WEBPACK_IMPORTED_MODULE_7__["CabeceraComponent"],
-            _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_8__["JuegosComponent"],
-            _componentes_menu_menu_component__WEBPACK_IMPORTED_MODULE_9__["MenuComponent"],
-            _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_10__["AdivinaElNumeroComponent"],
-            _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_11__["AdivinaMasListadoComponent"],
-            _componentes_listado_de_resultados_listado_de_resultados_component__WEBPACK_IMPORTED_MODULE_12__["ListadoDeResultadosComponent"],
-            _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_13__["AgilidadAritmeticaComponent"],
-            _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_14__["AgilidadMasListadoComponent"],
-            _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_15__["AnagramaComponent"],
-            _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_16__["ErrorComponent"],
-            _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_17__["InputJugadoresComponent"],
-            _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_18__["JugadoresListadoComponent"],
-            _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_19__["JuegoscardComponent"],
-            _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_21__["TatetiComponent"],
-            _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_22__["PptComponent"],
-            _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_23__["PreguntadosComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"],
+            _componentes_principal_principal_component__WEBPACK_IMPORTED_MODULE_12__["PrincipalComponent"],
+            _componentes_cabecera_cabecera_component__WEBPACK_IMPORTED_MODULE_13__["CabeceraComponent"],
+            _componentes_juegos_juegos_component__WEBPACK_IMPORTED_MODULE_14__["JuegosComponent"],
+            _componentes_menu_menu_component__WEBPACK_IMPORTED_MODULE_15__["MenuComponent"],
+            _componentes_adivina_el_numero_adivina_el_numero_component__WEBPACK_IMPORTED_MODULE_16__["AdivinaElNumeroComponent"],
+            _componentes_adivina_mas_listado_adivina_mas_listado_component__WEBPACK_IMPORTED_MODULE_17__["AdivinaMasListadoComponent"],
+            _componentes_listado_de_resultados_listado_de_resultados_component__WEBPACK_IMPORTED_MODULE_18__["ListadoDeResultadosComponent"],
+            _componentes_agilidad_aritmetica_agilidad_aritmetica_component__WEBPACK_IMPORTED_MODULE_19__["AgilidadAritmeticaComponent"],
+            _componentes_agilidad_mas_listado_agilidad_mas_listado_component__WEBPACK_IMPORTED_MODULE_20__["AgilidadMasListadoComponent"],
+            _componentes_anagrama_anagrama_component__WEBPACK_IMPORTED_MODULE_21__["AnagramaComponent"],
+            _componentes_error_error_component__WEBPACK_IMPORTED_MODULE_22__["ErrorComponent"],
+            _componentes_input_jugadores_input_jugadores_component__WEBPACK_IMPORTED_MODULE_23__["InputJugadoresComponent"],
+            _componentes_jugadores_listado_jugadores_listado_component__WEBPACK_IMPORTED_MODULE_24__["JugadoresListadoComponent"],
+            _componentes_juegoscard_juegoscard_component__WEBPACK_IMPORTED_MODULE_25__["JuegoscardComponent"],
+            _componentes_tateti_tateti_component__WEBPACK_IMPORTED_MODULE_27__["TatetiComponent"],
+            _componentes_ppt_ppt_component__WEBPACK_IMPORTED_MODULE_28__["PptComponent"],
+            _componentes_preguntados_preguntados_component__WEBPACK_IMPORTED_MODULE_29__["PreguntadosComponent"],
+            _componentes_login_login_component__WEBPACK_IMPORTED_MODULE_30__["LoginComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_20__["BrowserAnimationsModule"]
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_26__["BrowserAnimationsModule"],
+            _angular_fire__WEBPACK_IMPORTED_MODULE_4__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].firebase),
+            _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_6__["AngularFirestoreModule"],
+            _angular_fire_auth__WEBPACK_IMPORTED_MODULE_8__["AngularFireAuthModule"],
+            _angular_fire_storage__WEBPACK_IMPORTED_MODULE_7__["AngularFireStorageModule"]
         ],
-        providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+        providers: [
+            src_app_services_user_service__WEBPACK_IMPORTED_MODULE_9__["UserService"]
+        ],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]]
     })
 ], AppModule);
 
@@ -905,17 +945,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _clases_juego_adivina__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../clases/juego-adivina */ "./src/app/clases/juego-adivina.ts");
+/* harmony import */ var src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/jugada.service */ "./src/app/services/jugada.service.ts");
+
 
 
 
 let AdivinaElNumeroComponent = class AdivinaElNumeroComponent {
-    constructor() {
+    constructor(jugadaService) {
+        this.jugadaService = jugadaService;
         this.enviarJuego = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.ocultarEsperando = true;
         this.ocultarIngrese = true;
         this.nuevoJuego = new _clases_juego_adivina__WEBPACK_IMPORTED_MODULE_2__["JuegoAdivina"]();
         console.info("numero Secreto:", this.nuevoJuego.numeroSecreto);
         this.ocultarVerificar = false;
+        localStorage.setItem('juego', 'adivina el numero');
     }
     generarnumero() {
         this.focoEnInput();
@@ -935,8 +979,11 @@ let AdivinaElNumeroComponent = class AdivinaElNumeroComponent {
             this.ocultarIngrese = true;
             this.MostarMensaje("Sos un Genio!!!", true);
             this.nuevoJuego.numeroSecreto = 0;
+            this.usuario = localStorage.getItem('usuario');
+            this.saveJugada("Gano");
         }
         else {
+            this.saveJugada("Perdio");
             let mensaje;
             switch (this.contador) {
                 case 1:
@@ -985,6 +1032,18 @@ let AdivinaElNumeroComponent = class AdivinaElNumeroComponent {
         }, 3000);
         console.info("objeto", x);
     }
+    saveJugada(resultado) {
+        this.jugada = {
+            "jugador": localStorage.getItem('usuario'),
+            "nombreJuego": localStorage.getItem('juego'),
+            "puntaje": 10,
+            "fechaJugada": new Date(),
+            "resultado": resultado
+        };
+        this.jugadaService.saveJugada(this.jugada)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+    }
     focoEnInput() {
         setTimeout(() => {
             document.getElementById("ingrese").value = null;
@@ -994,6 +1053,9 @@ let AdivinaElNumeroComponent = class AdivinaElNumeroComponent {
     ngOnInit() {
     }
 };
+AdivinaElNumeroComponent.ctorParameters = () => [
+    { type: src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_3__["JugadaService"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
 ], AdivinaElNumeroComponent.prototype, "enviarJuego", void 0);
@@ -1083,18 +1145,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _clases_juego_agilidad__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../clases/juego-agilidad */ "./src/app/clases/juego-agilidad.ts");
+/* harmony import */ var src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/jugada.service */ "./src/app/services/jugada.service.ts");
+
 
 
 
 // import {TimerObservable} from "rxjs/observable/TimerObservable";
 let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
-    constructor() {
+    constructor(jugadaService) {
+        this.jugadaService = jugadaService;
         this.enviarJuego = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.ocultarEsperando = true;
         this.jugando = false;
         this.ocultarVerificar = true;
         this.Tiempo = 5;
         this.nuevoJuego = new _clases_juego_agilidad__WEBPACK_IMPORTED_MODULE_2__["JuegoAgilidad"]();
+        localStorage.setItem('juego', 'agilidad aritmetica');
     }
     ngOnInit() {
     }
@@ -1121,9 +1187,11 @@ let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
             this.ocultarEsperando = true;
             this.enviarJuego.emit(this.nuevoJuego);
             this.MostarMensaje("¡Bien! No sos tan burr@!", true);
+            this.saveJugada("Gano");
         }
         else {
             this.MostarMensaje("Batiste cualquiera ; ). ¡Proba otra vez!", false);
+            this.saveJugada("Perdio");
         }
         this.jugando = false;
         this.nuevoJuego.resetearJuego();
@@ -1148,6 +1216,18 @@ let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
         }, 3000);
         console.info("objeto", x);
     }
+    saveJugada(resultado) {
+        this.jugada = {
+            "jugador": localStorage.getItem('usuario'),
+            "nombreJuego": localStorage.getItem('juego'),
+            "puntaje": 10,
+            "fechaJugada": new Date(),
+            "resultado": resultado
+        };
+        this.jugadaService.saveJugada(this.jugada)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+    }
     focoEnInput() {
         setTimeout(() => {
             document.getElementById("numIngresado").value = null;
@@ -1155,6 +1235,9 @@ let AgilidadAritmeticaComponent = class AgilidadAritmeticaComponent {
         }, 1);
     }
 };
+AgilidadAritmeticaComponent.ctorParameters = () => [
+    { type: src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_3__["JugadaService"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
 ], AgilidadAritmeticaComponent.prototype, "enviarJuego", void 0);
@@ -1244,11 +1327,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _anagramaObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./anagramaObject */ "./src/app/componentes/anagrama/anagramaObject.ts");
+/* harmony import */ var src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/jugada.service */ "./src/app/services/jugada.service.ts");
+
 
 
 
 let AnagramaComponent = class AnagramaComponent {
-    constructor() {
+    constructor(jugadaService) {
+        this.jugadaService = jugadaService;
         this.palabras = [];
         this.listaAnagramas = [
             (new _anagramaObject__WEBPACK_IMPORTED_MODULE_2__["AnagramaObject"]("sofa", ["faso", "fosa", "safo"])),
@@ -1267,6 +1353,7 @@ let AnagramaComponent = class AnagramaComponent {
         this.ocultarBotones = true;
         this.ocultarInputs = true;
         this.ocultarNuevoJuego = false;
+        localStorage.setItem('juego', 'anagramas');
     }
     NuevoJuego() {
         this.ocultarNuevoJuego = true;
@@ -1311,8 +1398,12 @@ let AnagramaComponent = class AnagramaComponent {
                 }
             }
         }
-        if (contador == this.anagramas.length)
+        if (contador == this.anagramas.length) {
             this.gano = true;
+            this.saveJugada("Gano");
+        }
+        else
+            this.saveJugada("Perdio");
     }
     MostarMensaje(mensaje, ganador = false) {
         this.mensaje = mensaje;
@@ -1333,6 +1424,18 @@ let AnagramaComponent = class AnagramaComponent {
         else
             this.MostarMensaje("Segui participando", this.gano);
     }
+    saveJugada(resultado) {
+        this.jugada = {
+            "jugador": localStorage.getItem('usuario'),
+            "nombreJuego": localStorage.getItem('juego'),
+            "puntaje": 10,
+            "fechaJugada": new Date(),
+            "resultado": resultado
+        };
+        this.jugadaService.saveJugada(this.jugada)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+    }
     resetearJuego() {
         this.anagramas = [];
         this.palabraElegida = "";
@@ -1344,6 +1447,9 @@ let AnagramaComponent = class AnagramaComponent {
     ngOnInit() {
     }
 };
+AnagramaComponent.ctorParameters = () => [
+    { type: src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_3__["JugadaService"] }
+];
 AnagramaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-anagrama',
@@ -1623,37 +1729,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JugadoresListadoComponent", function() { return JugadoresListadoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/jugada.service */ "./src/app/services/jugada.service.ts");
 
 
-// import { JugadoresService } from '../../servicios/jugadores.service';
+
 let JugadoresListadoComponent = class JugadoresListadoComponent {
-    //miJugadoresServicio:JugadoresService
-    //constructor(serviceJugadores:JugadoresService) {
-    constructor() {
-        //this.miJugadoresServicio = serviceJugadores;      
-    }
-    ngOnInit() {
+    constructor(jugadaService) {
+        this.jugadaService = jugadaService;
+        this.datos = [];
+        this.datosAux = [];
     }
     TraerTodos() {
-        //alert("totos");
-        //this.miJugadoresServicio.traertodos('jugadores/','todos').then(data=>{
-        //console.info("jugadores listado",(data));
-        //this.listado= data;
-        //})
+        this.jugadaService.getJugadas().subscribe(response => {
+            this.datos = [];
+            response.docs.forEach(value => {
+                const data = value.data();
+                const id = value.id;
+                const dato = {
+                    jugador: data.jugador,
+                    nombreJuego: data.nombreJuego,
+                    fechaJugada: data.fechaJugada.toDate(),
+                    fecha: "",
+                    resultado: data.resultado
+                };
+                this.unique(dato);
+            });
+        });
+    }
+    unique(dato) {
+        var repetido = false;
+        if (this.datos.length == 0)
+            this.datos.push(dato);
+        else {
+            for (var i = 0; i < this.datos.length; i++) {
+                if (this.datos[i].jugador == dato.jugador)
+                    repetido = true;
+            }
+            if (!repetido)
+                this.datos.push(dato);
+        }
     }
     TraerGanadores() {
-        //this.miJugadoresServicio.traertodos('jugadores/','ganadores').then(data=>{
-        //console.info("jugadores listado",(data));
-        // this.listado= data;
-        //})
     }
     TraerPerdedores() {
-        //this.miJugadoresServicio.traertodos('jugadores/','perdedores').then(data=>{
-        //console.info("jugadores listado",(data));
-        //this.listado= data;
-        //})
+    }
+    ngOnInit() {
+        this.TraerTodos();
     }
 };
+JugadoresListadoComponent.ctorParameters = () => [
+    { type: src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_2__["JugadaService"] }
+];
 JugadoresListadoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-jugadores-listado',
@@ -1691,17 +1817,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListadoDeResultadosComponent", function() { return ListadoDeResultadosComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/jugada.service */ "./src/app/services/jugada.service.ts");
+
 
 
 let ListadoDeResultadosComponent = class ListadoDeResultadosComponent {
-    constructor() {
+    constructor(jugadaService) {
+        this.jugadaService = jugadaService;
+        this.jugadas = [];
+    }
+    loadJugadas() {
+        this.jugadaService.getJugadas().subscribe(response => {
+            this.jugadas = [];
+            response.docs.forEach(value => {
+                const data = value.data();
+                const id = value.id;
+                const jug = {
+                    jugador: data.jugador,
+                    nombreJuego: data.nombreJuego,
+                    fechaJugada: data.fechaJugada.toDate(),
+                    fecha: "",
+                    resultado: data.resultado
+                };
+                jug.fecha = this.modificarStringFecha(jug.fechaJugada);
+                this.jugadas.push(jug);
+            });
+        });
+    }
+    modificarStringFecha(fecha) {
+        var fechaString = fecha.toString().split('GMT');
+        var fechaFinal = fechaString[0];
+        return fechaFinal;
     }
     ngOnInit() {
+        this.loadJugadas();
     }
     ver() {
         console.info(this.listado);
     }
 };
+ListadoDeResultadosComponent.ctorParameters = () => [
+    { type: src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_2__["JugadaService"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], ListadoDeResultadosComponent.prototype, "listado", void 0);
@@ -1712,6 +1869,129 @@ ListadoDeResultadosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"](
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./listado-de-resultados.component.css */ "./src/app/componentes/listado-de-resultados/listado-de-resultados.component.css")).default]
     })
 ], ListadoDeResultadosComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/componentes/login/login.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/componentes/login/login.component.css ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".estilo-titulo {\r\n    text-align: center;\r\n    margin-top: 2vh;\r\n    margin-bottom: 2vh;\r\n}\r\n\r\n.div-imagen {\r\n    text-align: center;\r\n}\r\n\r\n.estilo-imagen {\r\n\r\n    width: 70%;\r\n    height: 70%;\r\n}\r\n\r\n.estilo-form {\r\n\r\n    font-size: 25px;\r\n    margin-top: 6vh;\r\n    text-align: center;\r\n}\r\n\r\ninput {\r\n    height: 50px;\r\n    width: 500px; \r\n    margin-top: 5vh;\r\n}\r\n\r\n.estilo-boton {\r\n    width: 250px; \r\n    margin-top: 5vh;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2Ysa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksa0JBQWtCO0FBQ3RCOztBQUVBOztJQUVJLFVBQVU7SUFDVixXQUFXO0FBQ2Y7O0FBRUE7O0lBRUksZUFBZTtJQUNmLGVBQWU7SUFDZixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osWUFBWTtJQUNaLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osZUFBZTtBQUNuQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudGVzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXN0aWxvLXRpdHVsbyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tdG9wOiAydmg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAydmg7XHJcbn1cclxuXHJcbi5kaXYtaW1hZ2VuIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLmVzdGlsby1pbWFnZW4ge1xyXG5cclxuICAgIHdpZHRoOiA3MCU7XHJcbiAgICBoZWlnaHQ6IDcwJTtcclxufVxyXG5cclxuLmVzdGlsby1mb3JtIHtcclxuXHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBtYXJnaW4tdG9wOiA2dmg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbmlucHV0IHtcclxuICAgIGhlaWdodDogNTBweDtcclxuICAgIHdpZHRoOiA1MDBweDsgXHJcbiAgICBtYXJnaW4tdG9wOiA1dmg7XHJcbn1cclxuXHJcbi5lc3RpbG8tYm90b24ge1xyXG4gICAgd2lkdGg6IDI1MHB4OyBcclxuICAgIG1hcmdpbi10b3A6IDV2aDtcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/componentes/login/login.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/componentes/login/login.component.ts ***!
+  \******************************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+
+
+
+
+let LoginComponent = class LoginComponent {
+    constructor(userService, router) {
+        this.userService = userService;
+        this.router = router;
+        this.ocultarImagen = false;
+        this.ocultarRegistro = true;
+        this.ocultarIngreso = true;
+    }
+    //Login y registro con Firebase
+    onLogin() {
+        this.userService.login(this.email, this.password)
+            .then(data => {
+            localStorage.setItem('usuario', this.email);
+            this.router.navigate(['/Principal']);
+        })
+            .catch(err => {
+            console.log(err);
+            alert("Usuario no registrado");
+        });
+    }
+    onRegister() {
+        this.userService.register(this.emailNuevo, this.passwordNuevo, this.confirm)
+            .then(data => {
+            alert('Usuario registrado');
+            this.ocultarRegistro = true;
+            this.ocultarImagen = false;
+        })
+            .catch(err => {
+            console.log(err);
+            alert("Usuario no registrado");
+        });
+    }
+    //Registro y Login con LocalStorage
+    registroDeUsuario() {
+        this.usuariosString = localStorage.getItem('usuarios');
+        this.usuarios = JSON.parse(this.usuariosString);
+        if (this.usuarios == null) {
+            var usuario = [{ 'usuario': this.nuevoUsuario, 'contraseña': this.nuevaContrasena }];
+            localStorage.setItem('usuarios', JSON.stringify(usuario));
+        }
+        else {
+            var user = { 'usuario': this.nuevoUsuario, 'contraseña': this.nuevaContrasena };
+            this.usuarios.push(user);
+            localStorage.setItem('usuarios', JSON.stringify(this.usuarios));
+        }
+        this.ocultarRegistro = true;
+        this.ocultarImagen = false;
+    }
+    ingresoDeUsuario() {
+        this.usuariosString = localStorage.getItem('usuarios');
+        this.usuarios = JSON.parse(this.usuariosString);
+        var encontro = false;
+        for (var i = 0; i < this.usuarios.length; i++) {
+            console.log(this.usuarios[i].usuario);
+            if (this.usuarios[i].usuario == this.usuarioLogueado && this.usuarios[i].contraseña == this.contrasenaUsuarioLogueado) {
+                this.router.navigate(['/Principal']);
+                encontro = true;
+                break;
+            }
+        }
+        if (encontro == false)
+            alert("Nombre de usuario y/o contraseña incorrectos");
+    }
+    registrarse() {
+        this.ocultarImagen = true;
+        this.ocultarRegistro = false;
+        this.ocultarIngreso = true;
+    }
+    ingresar() {
+        this.ocultarImagen = true;
+        this.ocultarRegistro = true;
+        this.ocultarIngreso = false;
+    }
+    ngOnInit() {
+    }
+};
+LoginComponent.ctorParameters = () => [
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-login',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/login/login.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.css */ "./src/app/componentes/login/login.component.css")).default]
+    })
+], LoginComponent);
 
 
 
@@ -1811,16 +2091,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PptComponent", function() { return PptComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/jugada.service */ "./src/app/services/jugada.service.ts");
+
 
 
 let PptComponent = class PptComponent {
-    constructor() {
+    constructor(jugadaService) {
+        this.jugadaService = jugadaService;
         this.imagenPiedra = "./assets/imagenes/piedra.jpg";
         this.imagenPapel = "./assets/imagenes/papel.jpg";
         this.imagenTijera = "./assets/imagenes/tijera.jpg";
         this.ocultarNuevoJuego = false;
         this.ocultarElementos = true;
         this.ocultarResultados = true;
+        localStorage.setItem('juego', 'piedra, papel o tijera');
     }
     NuevoJuego() {
         this.ocultarNuevoJuego = true;
@@ -1843,32 +2127,62 @@ let PptComponent = class PptComponent {
         switch (elementoSeleccionado) {
             case 'piedra':
                 this.elementoSeleccionado = this.imagenPiedra;
-                if (this.elementoAsignado == this.imagenPiedra)
+                if (this.elementoAsignado == this.imagenPiedra) {
                     this.textoResultado = "¡Empataste!";
-                else if (this.elementoAsignado == this.imagenPapel)
+                    this.saveJugada("Empato");
+                }
+                else if (this.elementoAsignado == this.imagenPapel) {
                     this.textoResultado = "¡Perdiste!";
-                else
+                    this.saveJugada("Perdio");
+                }
+                else {
                     this.textoResultado = "¡Ganaste!";
+                    this.saveJugada("Gano");
+                }
                 break;
             case 'papel':
                 this.elementoSeleccionado = this.imagenPapel;
-                if (this.elementoAsignado == this.imagenPiedra)
+                if (this.elementoAsignado == this.imagenPiedra) {
                     this.textoResultado = "¡Ganaste!";
-                else if (this.elementoAsignado == this.imagenPapel)
+                    this.saveJugada("Gano");
+                }
+                else if (this.elementoAsignado == this.imagenPapel) {
                     this.textoResultado = "¡Empataste!";
-                else
+                    this.saveJugada("Empato");
+                }
+                else {
                     this.textoResultado = "¡Perdiste!";
+                    this.saveJugada("Perdio");
+                }
                 break;
             case 'tijera':
                 this.elementoSeleccionado = this.imagenTijera;
-                if (this.elementoAsignado == this.imagenPiedra)
+                if (this.elementoAsignado == this.imagenPiedra) {
                     this.textoResultado = "¡Perdiste!";
-                else if (this.elementoAsignado == this.imagenPapel)
+                    this.saveJugada("Perdio");
+                }
+                else if (this.elementoAsignado == this.imagenPapel) {
                     this.textoResultado = "¡Ganaste!";
-                else
+                    this.saveJugada("Gano");
+                }
+                else {
                     this.textoResultado = "¡Empataste!";
+                    this.saveJugada("Empato");
+                }
                 break;
         }
+    }
+    saveJugada(resultado) {
+        this.jugada = {
+            "jugador": localStorage.getItem('usuario'),
+            "nombreJuego": localStorage.getItem('juego'),
+            "puntaje": 10,
+            "fechaJugada": new Date(),
+            "resultado": resultado
+        };
+        this.jugadaService.saveJugada(this.jugada)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
     }
     RepetirJuego() {
         this.ocultarResultados = true;
@@ -1880,6 +2194,9 @@ let PptComponent = class PptComponent {
     ngOnInit() {
     }
 };
+PptComponent.ctorParameters = () => [
+    { type: src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_2__["JugadaService"] }
+];
 PptComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-ppt',
@@ -1919,12 +2236,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./preguntadosObject */ "./src/app/componentes/preguntados/preguntadosObject.ts");
 /* harmony import */ var _respuestas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./respuestas */ "./src/app/componentes/preguntados/respuestas.ts");
+/* harmony import */ var src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/jugada.service */ "./src/app/services/jugada.service.ts");
+
 
 
 
 
 let PreguntadosComponent = class PreguntadosComponent {
-    constructor() {
+    constructor(jugadaService) {
+        this.jugadaService = jugadaService;
         this.listaPreguntas = [
             (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cual de estos equipos no es de la liga italiana?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "Sevilla")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "Torino")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "Juventus")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "Milan"))], 1)),
             (new _preguntadosObject__WEBPACK_IMPORTED_MODULE_2__["PreguntadosObject"]("¿Cuantas copas del mundo tiene la seleccion argentina?", [(new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](1, "No tiene")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](2, "3")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](3, "1")), (new _respuestas__WEBPACK_IMPORTED_MODULE_3__["Respuestas"](4, "2"))], 4)),
@@ -1960,6 +2280,7 @@ let PreguntadosComponent = class PreguntadosComponent {
         this.ocultarNuevoJuego = false;
         this.ocultarBotonSiguiente = true;
         this.contador = 0;
+        localStorage.setItem('juego', 'preguntados futbol');
     }
     NuevoJuego() {
         this.pregunta = this.listaPreguntas[this.contador].pregunta;
@@ -1971,10 +2292,12 @@ let PreguntadosComponent = class PreguntadosComponent {
         if (id == this.respuestaCorrecta) {
             this.gano = true;
             this.MostarMensaje("¡Respuesta correcta!", this.gano);
+            this.saveJugada("Gano");
         }
         else {
             this.gano = false;
             this.MostarMensaje("Le pifiaste che", this.gano);
+            this.saveJugada("Perdio");
         }
         this.ocultarBotonSiguiente = false;
         this.deshabilitarBotones(id - 1);
@@ -2010,9 +2333,24 @@ let PreguntadosComponent = class PreguntadosComponent {
             x.className = x.className.replace("show", "");
         }, 3000);
     }
+    saveJugada(resultado) {
+        this.jugada = {
+            "jugador": localStorage.getItem('usuario'),
+            "nombreJuego": localStorage.getItem('juego'),
+            "puntaje": 10,
+            "fechaJugada": new Date(),
+            "resultado": resultado
+        };
+        this.jugadaService.saveJugada(this.jugada)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+    }
     ngOnInit() {
     }
 };
+PreguntadosComponent.ctorParameters = () => [
+    { type: src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_4__["JugadaService"] }
+];
 PreguntadosComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-preguntados',
@@ -2182,15 +2520,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _celda__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./celda */ "./src/app/componentes/tateti/celda.ts");
 /* harmony import */ var _clases_juego_tateti__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../clases/juego-tateti */ "./src/app/clases/juego-tateti.ts");
+/* harmony import */ var src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/jugada.service */ "./src/app/services/jugada.service.ts");
 var TatetiComponent_1;
 
 
 
 
+
 let TatetiComponent = TatetiComponent_1 = class TatetiComponent {
-    constructor() {
+    constructor(jugadaService) {
+        this.jugadaService = jugadaService;
         this.jugando = false;
         this.nuevoJuego = new _clases_juego_tateti__WEBPACK_IMPORTED_MODULE_3__["JuegoTaTeTi"]();
+        localStorage.setItem('juego', 'ta te ti');
     }
     NuevoJuego() {
         this.resetearJuego();
@@ -2210,6 +2552,7 @@ let TatetiComponent = TatetiComponent_1 = class TatetiComponent {
             else {
                 this.mostrarMensaje("¡Ganaste, crack!", true);
                 this.jugando = false;
+                this.saveJugada("Gano");
             }
         }
     }
@@ -2230,6 +2573,7 @@ let TatetiComponent = TatetiComponent_1 = class TatetiComponent {
             else {
                 this.mostrarMensaje("Perdiste. ¡Intentalo otra vez!", false);
                 this.jugando = false;
+                this.saveJugada("Perdio");
             }
         }
     }
@@ -2288,6 +2632,18 @@ let TatetiComponent = TatetiComponent_1 = class TatetiComponent {
                 this.ganaJugador = jugador;
         }
     }
+    saveJugada(resultado) {
+        this.jugada = {
+            "jugador": localStorage.getItem('usuario'),
+            "nombreJuego": localStorage.getItem('juego'),
+            "puntaje": 10,
+            "fechaJugada": new Date(),
+            "resultado": resultado
+        };
+        this.jugadaService.saveJugada(this.jugada)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
+    }
     resetearJuego() {
         this.ganaJugador = TatetiComponent_1.JUEGO_SIGUE;
         this.celdasSinMarcar = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -2306,6 +2662,9 @@ let TatetiComponent = TatetiComponent_1 = class TatetiComponent {
 TatetiComponent.JUEGO_SIGUE = 0;
 TatetiComponent.GANA_JUGADOR = 1;
 TatetiComponent.GANA_COMPU = 1;
+TatetiComponent.ctorParameters = () => [
+    { type: src_app_services_jugada_service__WEBPACK_IMPORTED_MODULE_4__["JugadaService"] }
+];
 TatetiComponent = TatetiComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-tateti',
@@ -2313,6 +2672,91 @@ TatetiComponent = TatetiComponent_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__deco
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./tateti.component.css */ "./src/app/componentes/tateti/tateti.component.css")).default]
     })
 ], TatetiComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/jugada.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/services/jugada.service.ts ***!
+  \********************************************/
+/*! exports provided: JugadaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JugadaService", function() { return JugadaService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+
+
+
+let JugadaService = class JugadaService {
+    constructor(db) {
+        this.db = db;
+        this.jugadaCollectionName = 'jugadas';
+    }
+    saveJugada(jugada) {
+        return this.db.collection(this.jugadaCollectionName).add(jugada);
+    }
+    getJugadas() {
+        return this.db.collection(this.jugadaCollectionName, ref => ref.orderBy('fechaJugada')).get();
+    }
+};
+JugadaService.ctorParameters = () => [
+    { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] }
+];
+JugadaService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], JugadaService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/user.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/user.service.ts ***!
+  \******************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/es2015/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+
+let UserService = class UserService {
+    constructor(fbAuth) {
+        this.fbAuth = fbAuth;
+    }
+    login(email, password) {
+        return this.fbAuth.auth.signInWithEmailAndPassword(email, password);
+    }
+    register(email, password, confirm) {
+        if (password != confirm) {
+            return Promise.reject("Las contraseñas no coinciden");
+        }
+        return this.fbAuth.auth.createUserWithEmailAndPassword(email, password);
+    }
+    forget(email) {
+        return this.fbAuth.auth.sendPasswordResetEmail(email);
+    }
+};
+UserService.ctorParameters = () => [
+    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"] }
+];
+UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
+], UserService);
 
 
 
@@ -2334,7 +2778,16 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: false
+    production: false,
+    firebase: {
+        apiKey: "AIzaSyBmwSjsFVox4-LhMuTEep10h6nbJ5851CE",
+        authDomain: "myfirstproyect-c0de4.firebaseapp.com",
+        databaseURL: "https://myfirstproyect-c0de4.firebaseio.com",
+        projectId: "myfirstproyect-c0de4",
+        storageBucket: "myfirstproyect-c0de4.appspot.com",
+        messagingSenderId: "885835394006",
+        appId: "1:885835394006:web:640b16b930f28789"
+    }
 };
 /*
  * For easier debugging in development mode, you can import the following file
